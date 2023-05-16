@@ -1,17 +1,18 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
+
 .pageView{
   background-color: #fff;
   width: 100%;
   height: 100vh;
-  
 }
 
 .cabecalho{
   background-color:#0054A6;
-  height: 15%;
+  height: 10vh;
   display: flex;
   align-items: center;
   color: #fff;
@@ -22,5 +23,23 @@
   margin-left: 5rem;
 }
 
+.container{
+  background-color: #d9d9d9;
+  width: auto;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+}
 
+.container-montagem{
+  width: 70%;
+  background-color: #fff;
+  margin: 1rem 0rem 1rem 0.5rem;
+}
+
+.container-resumo{
+  width: 30%;
+  background-color: #fff;
+  margin: 1rem 0.5rem;
+}
 
