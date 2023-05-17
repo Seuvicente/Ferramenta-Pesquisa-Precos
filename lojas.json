@@ -1,4 +1,4 @@
- {
+[ {
     "codigo": 1,
     "codigoDeposito": 1,
     "nomeFilial": "FOR01-Fortaleza-CE#",
@@ -357,4 +357,5 @@
     "flagEcommerce": "S",
     "bloqueioFaceamento": "N",
     "dataImplantacaoTransito": null
-  },
+  }
+]
