@@ -1,0 +1,26 @@
+.container-principal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-cabecalho{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 1.5rem;
+    border-bottom: 4px solid #0054A6;
+    padding-bottom: .3rem;
+}
+
+.container-cabecalho h1{
+    color:#0054A6;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.icone-resumo{
+    width: 1.5em;
+    height: 1.8em;
+}

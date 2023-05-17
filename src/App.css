@@ -12,7 +12,7 @@
 
 .cabecalho{
   background-color:#0054A6;
-  height: 10vh;
+  height: 10%;
   display: flex;
   align-items: center;
   color: #fff;
@@ -26,7 +26,7 @@
 .container{
   background-color: #d9d9d9;
   width: auto;
-  height: 90vh;
+  height: 90%;
   display: flex;
   justify-content: space-around;
 }
@@ -42,12 +42,16 @@
 }
 
 .selecao-periodo{
+  width:100%;
   height: 30vh;
+  background-color:#ffffff;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .cards-montagem{
+  background-color: #0054A6;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -15,13 +15,10 @@ function App() {
       <section className='container'>
         <div className='container-montagem'>
              <div className="selecao-periodo">
-               {/* Insira aqui o componente de selecao de periodo */}
                <SeletorPeriodo/>
              </div>
              <div className="cards-montagem">
-               { /* Insira aqui os componente CardLoja */ }
                <CardLojas/>
-               { /* Insira aqui os componente CardLoja */ }
                <CardProdutos/>
              </div>
         </div>
