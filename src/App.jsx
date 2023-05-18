@@ -23,7 +23,6 @@ function App() {
              </div>
         </div>
         <div className='container-resumo'>
-          {/* Insira aqui o componente Resumo */}
           <CardResumo/>
         </div>
       

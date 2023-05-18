@@ -9,7 +9,7 @@
 .container-cabecalho{
     display: flex;
     justify-content: space-between;
-    margin: 3rem 1.5rem;
+    margin: 1.5rem 1.5rem 1rem 1.5rem;
     border-bottom: 4px solid #0054A6;
     padding-bottom: .3rem;
 }
@@ -23,4 +23,51 @@
 .icone-resumo{
     width: 1.5em;
     height: 1.8em;
+}
+
+.container-infos{
+    display:flex;
+    align-self: center;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    background-color: #0054A6;
+    color: #0054A6;
+    border:1px solid #000
+}
+
+.container-info-topo{
+    height: 20%;
+    border:1px solid #000;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.container-info-topo p{
+    margin-bottom: 1rem;
+}
+
+.container-infos-Componentes{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container-info-lojas{
+    width:100%;
+    height: 40%;
+    text-align: start;
+    
+}
+
+.container-info-lojas h2{
+    
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+
 }

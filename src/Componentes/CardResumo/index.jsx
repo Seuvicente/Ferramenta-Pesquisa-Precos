@@ -1,5 +1,6 @@
 import './CardResumo.css'
 import icone from '../../assets/vector.png'
+import CardLojaResumo from '../CardLojaResumo'
 
 export default function CardResumo(){
     return(
@@ -13,11 +14,14 @@ export default function CardResumo(){
                     <p>Período: 17/05/2023 a 17/05/2023</p>
                     <p>Categoria:   Categoria</p>
                 </div>
-                <div className="container-info-lojas">
-                    <h2>Lojas</h2>
-                </div>
-                <div className="container-info-produtos">
-                    <h2>Produtos</h2>
+                    <div className="container-infos-Componentes">
+                    <div className="container-info-lojas">
+                        <h2>Lojas</h2>
+                        <CardLojaResumo/>
+                    </div>
+                    <div className="container-info-produtos">
+                        <h2>Produtos</h2>
+                    </div>
                 </div>
             </div>
 
