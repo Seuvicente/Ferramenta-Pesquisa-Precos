@@ -9,20 +9,29 @@ import './CardLojas.css'
   const [lojasSelecionadas, setLojasSelecionadas] = useState([]);
   const lowerBusca = busca.toLowerCase(); 
   const lojasFiltradas = lojas.filter((loja) => loja.nomeFilial.toLocaleLowerCase().includes(lowerBusca)); 
+  const [listaLojas, setListaLojas]= useState([]);
 
   const handleCheckboxClick = (loja) => { // checkbox;
     // Se o checkbox foi marcado
-   if (document.getElementById(loja.codigo).checked) { 
-     console.log(lojasSelecionadas);
+
     
-     setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
+   if (document.getElementById(loja.codigo).checked) { 
+      setListaLojas([...listaLojas, loja.codigo])
+     
+     }else if(listaLojas.includes(loja.codigo)) {
+        setListaLojas(listaLojas.filter(x => x != loja.codigo))
+    
+    
+    //  setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
    } else { 
      const indiceLojaSelecionada  = lojasSelecionadas.findIndex((l) => l.codigo === loja.codigo); //metodo findIndex para encontrar o índice do primeiro elemento no array. erifica se o código da loja atual é igual ao código da loja passada como argumento.
-     if (indiceLojaSelecionada  > -1) { //verifican se a loja selecionada está no array 
+    
+     if (indiceLojaSelecionada  > 0) { //verifican se a loja selecionada está no array 
        const newLojasSelecionadas = [...lojasSelecionadas];
-       newLojasSelecionadas.splice(indiceLojaSelecionada , 0);
+       newLojasSelecionadas.splice(indiceLojaSelecionada , 1);
        setLojasSelecionadas(newLojasSelecionadas);
        console.log(lojasSelecionadas)
+       lojasSelecionadas
      }
    }
  }
@@ -49,7 +58,7 @@ import './CardLojas.css'
                 {loja.nomeFilial}
               </li>
             ))}
-          </ul>
+          </ul>{console.log(listaLojas)}
         </div>
       </div>
     </div>
