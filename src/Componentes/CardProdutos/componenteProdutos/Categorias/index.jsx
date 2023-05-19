@@ -7,6 +7,7 @@ function Categorias() {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] = useState([]);
+  const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState([]);
 
   // Obtém as categorias únicas dos produtos
   const categoriasUnicas = [...new Set(produtos.map((produto) => produto.categoria))];
@@ -16,23 +17,22 @@ function Categorias() {
     setCategoriaSelecionada(event.target.value);
   };
 
-  // Manipula a mudança de seleção/deseleção de um produto
-  const handleProdutoCheckboxChange = (event, produtoId) => {
-    const isChecked = event.target.checked;
+  // Adiciona ou remove um produto da matriz de produtos selecionados
+  const toggleProdutoSelecionado = (produtoId) => {
     const produto = produtos.find((p) => p.id === produtoId);
 
-    if (isChecked) {
-      setProdutosSelecionados([...produtosSelecionados, produtoId]);
-      setCategoriaSelecionada(produto.categoria);
-    } else {
+    if (produtosSelecionados.includes(produtoId)) {
+      // Remove o produto da matriz de produtos selecionados
       setProdutosSelecionados(produtosSelecionados.filter((id) => id !== produtoId));
 
-      const produtosDaCategoriaSelecionada = produtos.filter((p) => p.categoria === produto.categoria);
-      const todosDesmarcados = produtosDaCategoriaSelecionada.every((p) => !produtosSelecionados.includes(p.id));
+      // Remove o produto da matriz de objetos produtosSelecionadosArray
+      setProdutosSelecionadosArray(produtosSelecionadosArray.filter((p) => p.id !== produtoId));
+    } else {
+      // Adiciona o produto à matriz de produtos selecionados
+      setProdutosSelecionados([...produtosSelecionados, produtoId]);
 
-      if (todosDesmarcados) {
-        setCategoriaSelecionada('');
-      }
+      // Adiciona o objeto completo do produto à matriz de objetos produtosSelecionadosArray
+      setProdutosSelecionadosArray([...produtosSelecionadosArray, produto]);
     }
   };
 
@@ -68,6 +68,11 @@ function Categorias() {
     return 0;
   });
 
+  // Exibe a matriz produtosSelecionadosArray no console do navegador
+  useEffect(() => {
+    console.log(produtosSelecionadosArray);
+  }, [produtosSelecionadosArray]);
+
   return (
     <div>
       <div className='CategoriasProdutos'>
@@ -94,7 +99,7 @@ function Categorias() {
               type="checkbox"
               value={produto.id}
               checked={produtosSelecionados.includes(produto.id)}
-              onChange={(event) => handleProdutoCheckboxChange(event, produto.id)}
+              onChange={() => toggleProdutoSelecionado(produto.id)}
             />
           </div>
         ))}

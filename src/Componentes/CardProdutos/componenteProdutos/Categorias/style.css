@@ -54,7 +54,7 @@
 
 
 .produtos::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 4px; /* Largura da barra de rolagem */
     
   }
   
@@ -65,7 +65,7 @@
   
 .produtos::-webkit-scrollbar-thumb {
     background-color: #0053a6cb;; /* Cor do "polegar" da barra de rolagem */
-    border-radius: 10px;
+    border-radius: 5px;
   }
   
 .produtos::-webkit-scrollbar-thumb:hover {
