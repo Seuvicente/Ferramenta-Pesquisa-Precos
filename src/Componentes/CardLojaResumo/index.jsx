@@ -1,15 +1,19 @@
 import './CardLojaResumo.css'
 
-
 export default function CardLojaResumo(){
     return(
         
         <div className="cardlojaresumo">
-           <p className='item'> FOR48 <p className='X'>X</p></p>
-           <p className='item'> FOR47 <p className='X'>X</p></p> 
-           <p className='item'> FOR46 <p className='X'>X</p></p>
-           <p className='item'> FOR47 <p className='X'>X</p></p> 
-           <p className='item'> FOR46 <p className='X'>X</p></p>
+           <span className='item-loja'> FOR48 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR47 <span className='X'>X</span></span> 
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR47 <span className='X'>X</span></span> 
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           <span className='item-loja'> FOR46 <span className='X'>X</span></span>
+           
             
         </div>
     )

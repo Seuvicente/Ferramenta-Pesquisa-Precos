@@ -18,7 +18,7 @@ export default function CardResumo(){
                 </div>
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
-                        <h2>Lojas</h2>
+                        <h2 className='titulo-loja-resumo'>Lojas</h2>
                         <CardLojaResumo/>
                     </div>
                     <div className="container-info-produtos">

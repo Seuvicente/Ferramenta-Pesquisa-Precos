@@ -11,15 +11,18 @@
 .item-produto{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: nowrap;
-    background-color: #0054A6;
+    background-color: #0053a6dc;
     border-radius: 10px;
     color: #ffffff;
     font-size: .8rem;
     font-weight: 700;
-    width: 25%;
-    height: 2em;
-    margin: .8em .1em;
-    padding: .2em;
+    width: 30%;
+    height: 0.8rem;
+    padding: .4em;
+}
+
+.item-produto:hover{
+    background-color: #0054A6;
 }

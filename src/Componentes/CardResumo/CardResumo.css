@@ -59,16 +59,16 @@
 
 .container-info-lojas{
     width:100%;
-    height: 40%;
+    height: 35%;
     text-align: start;
+    
     
 }
 
-.container-info-lojas h2{
-    
+.titulo-loja-resumo{
     font-size: 1.2rem;
     font-weight: 700;
-    color: #000;
+    color: #0054A6;
 
 }
 

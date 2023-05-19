@@ -1,16 +1,29 @@
-import './style.css'
-import React, { useState, useEffect } from 'react';
-import produtos from '../../../../../produtos.json';
-import LupaProdutos from '../LupaProdutos/index';
+import "./style.css";
+import { useState, useEffect, useContext } from "react";
+import produtos from "../../../../../produtos.json";
+import LupaProdutos from "../LupaProdutos/index";
+import {ResumoContexto}  from "../../../../Contexto/contexto";
 
 function Categorias() {
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-  const [produtosSelecionados, setProdutosSelecionados] = useState([]);
-  const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] = useState([]);
-  const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState([]);
+  const {
+    categoriaSelecionada,
+    setCategoriaSelecionada,
+    produtosSelecionados,
+    setProdutosSelecionados,
+  } = useContext(ResumoContexto);
 
+  const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
+    useState([]);
+  const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState(
+    []
+  );
+
+  console.log(categoriaSelecionada);
+  console.log(produtosSelecionados);
   // Obtém as categorias únicas dos produtos
-  const categoriasUnicas = [...new Set(produtos.map((produto) => produto.categoria))];
+  const categoriasUnicas = [
+    ...new Set(produtos.map((produto) => produto.categoria)),
+  ];
 
   // Atualiza a categoria selecionada no estado
   const handleCategoriaChange = (event) => {
@@ -23,10 +36,14 @@ function Categorias() {
 
     if (produtosSelecionados.includes(produtoId)) {
       // Remove o produto da matriz de produtos selecionados
-      setProdutosSelecionados(produtosSelecionados.filter((id) => id !== produtoId));
+      setProdutosSelecionados(
+        produtosSelecionados.filter((id) => id !== produtoId)
+      );
 
       // Remove o produto da matriz de objetos produtosSelecionadosArray
-      setProdutosSelecionadosArray(produtosSelecionadosArray.filter((p) => p.id !== produtoId));
+      setProdutosSelecionadosArray(
+        produtosSelecionadosArray.filter((p) => p.id !== produtoId)
+      );
     } else {
       // Adiciona o produto à matriz de produtos selecionados
       setProdutosSelecionados([...produtosSelecionados, produtoId]);
@@ -56,17 +73,19 @@ function Categorias() {
   };
 
   // Ordena os produtos filtrados com base nos produtos selecionados
-  const produtosOrdenados = [...produtosFiltradosPorCategoria].sort((produtoA, produtoB) => {
-    const isSelectedA = produtosSelecionados.includes(produtoA.id);
-    const isSelectedB = produtosSelecionados.includes(produtoB.id);
-    if (isSelectedA && !isSelectedB) {
-      return -1;
+  const produtosOrdenados = [...produtosFiltradosPorCategoria].sort(
+    (produtoA, produtoB) => {
+      const isSelectedA = produtosSelecionados.includes(produtoA.id);
+      const isSelectedB = produtosSelecionados.includes(produtoB.id);
+      if (isSelectedA && !isSelectedB) {
+        return -1;
+      }
+      if (!isSelectedA && isSelectedB) {
+        return 1;
+      }
+      return 0;
     }
-    if (!isSelectedA && isSelectedB) {
-      return 1;
-    }
-    return 0;
-  });
+  );
 
   // Exibe a matriz produtosSelecionadosArray no console do navegador
   useEffect(() => {
@@ -75,14 +94,24 @@ function Categorias() {
 
   return (
     <div>
-      <div className='CategoriasProdutos'>
+      <div className="CategoriasProdutos">
         {/* Componente de seleção de categorias */}
-        <label className="categoriasText" htmlFor="cars">Categorias</label>
-        <select className='setaCategorias' name="cars" id="cars" value={categoriaSelecionada} onChange={handleCategoriaChange}>
+        <label className="categoriasText" htmlFor="cars">
+          Categorias
+        </label>
+        <select
+          className="setaCategorias"
+          name="cars"
+          id="cars"
+          value={categoriaSelecionada}
+          onChange={handleCategoriaChange}
+        >
           <option>Selecione</option>
           {/* Renderiza as opções de categorias */}
           {categoriasUnicas.map((categoria, index) => (
-            <option key={index} value={categoria}>{categoria}</option>
+            <option key={index} value={categoria}>
+              {categoria}
+            </option>
           ))}
         </select>
       </div>
@@ -91,11 +120,11 @@ function Categorias() {
       <div className="produtos">
         {/* Renderiza os produtos filtrados e ordenados */}
         {produtosOrdenados.map((produto) => (
-          <div className='corp' key={produto.id}>
+          <div className="corp" key={produto.id}>
             {produto.nome}
             {/* Checkbox para selecionar/deselecionar o produto */}
             <input
-              className='checkBox'
+              className="checkBox"
               type="checkbox"
               value={produto.id}
               checked={produtosSelecionados.includes(produto.id)}
