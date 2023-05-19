@@ -1,6 +1,8 @@
 import './CardResumo.css'
 import icone from '../../assets/vector.png'
 import CardLojaResumo from '../CardLojaResumo'
+import CardProdutosResumo from '../CardProdutoResumo'
+
 
 export default function CardResumo(){
     return(
@@ -21,6 +23,7 @@ export default function CardResumo(){
                     </div>
                     <div className="container-info-produtos">
                         <h2>Produtos</h2>
+                        <CardProdutosResumo/>
                     </div>
                 </div>
             </div>
