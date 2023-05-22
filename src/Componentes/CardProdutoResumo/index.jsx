@@ -18,8 +18,6 @@ export default function CardProdutosResumo(){
                 <ul >
                     <li className='item-produto'>{produto}<p className='X'>X</p></li>
                     {console.log("Produto :"+ produto)}
-                    
-                 
                 </ul>
             )):<></>}        
         </div>
