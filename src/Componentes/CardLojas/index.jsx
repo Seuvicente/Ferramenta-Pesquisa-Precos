@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ResumoContexto } from '../../Contexto/Contexto';
 import lojas from '../../../lojas.json';
 import { SlMagnifier } from "react-icons/sl";
 import './CardLojas.css'
@@ -9,17 +10,21 @@ import './CardLojas.css'
   const [lojasSelecionadas, setLojasSelecionadas] = useState([]);
   const lowerBusca = busca.toLowerCase(); 
   const lojasFiltradas = lojas.filter((loja) => loja.nomeFilial.toLocaleLowerCase().includes(lowerBusca)); 
-  const [listaLojas, setListaLojas]= useState([]);
+  const {listaLojas, setListaLojas,listaIdLojasSelecionadas,setListaIdLojasSelecionadas}= useContext(ResumoContexto);
 
   const handleCheckboxClick = (loja) => { // checkbox;
     // Se o checkbox foi marcado
 
     
    if (document.getElementById(loja.codigo).checked) { 
-      setListaLojas([...listaLojas, loja.codigo])
+      setListaLojas([...listaLojas, loja.nomeFilial])
+      
+      setListaIdLojasSelecionadas([...listaIdLojasSelecionadas, loja.codigo])
+      
+      
      
-     }else if(listaLojas.includes(loja.codigo)) {
-        setListaLojas(listaLojas.filter(x => x != loja.codigo))
+     }else if(listaLojas.includes(loja.nomeFilial)) {
+        setListaLojas(listaLojas.filter(x => x != loja.nomeFilial))
     
     
     //  setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
@@ -54,11 +59,17 @@ import './CardLojas.css'
           <ul className='lista-lojas'>
             {lojasFiltradas.map((loja) => (
               <li className='lista-lojas__item' key={loja.codigo}>
-                <input type="checkbox" className='lista-lojas__checkbox' onClick={() => handleCheckboxClick(loja)} id={loja.codigo} />
+                <input type="checkbox" 
+                className='lista-lojas__checkbox' 
+                onClick={() => handleCheckboxClick(loja)} 
+                id={loja.codigo} 
+                checked={listaLojas.includes(loja.nomeFilial)}
+                 />
+
                 {loja.nomeFilial}
               </li>
             ))}
-          </ul>{console.log(listaLojas)}
+          </ul>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import "./style.css";
 import { useState, useEffect, useContext } from "react";
 import produtos from "../../../../../produtos.json";
 import LupaProdutos from "../LupaProdutos/index";
-import {ResumoContexto}  from "../../../../Contexto/contexto";
+import {ResumoContexto}  from "../../../../Contexto/Contexto";
 
 function Categorias() {
   const {
@@ -10,14 +10,14 @@ function Categorias() {
     setCategoriaSelecionada,
     produtosSelecionados,
     setProdutosSelecionados,
+    produtosSelecionadosArray, 
+    setProdutosSelecionadosArray
   } = useContext(ResumoContexto);
    
    
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
     useState([]);
-  const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState(
-    []
-  );
+  
 
   
   // Obtém as categorias únicas dos produtos

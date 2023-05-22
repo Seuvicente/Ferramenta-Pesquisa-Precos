@@ -3,18 +3,14 @@ import icone from '../../assets/vector.png'
 import CardLojaResumo from '../CardLojaResumo'
 import CardProdutosResumo from '../CardProdutoResumo'
 import { useContext } from 'react'
-import { ResumoContexto } from '../../Contexto/contexto'
-
+import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 
 export default function CardResumo(){
-
     const {
         categoriaSelecionada,
-        setCategoriaSelecionada,
-        produtosSelecionados,
-        setProdutosSelecionados,
+        dataInicial,
+        dataFim
       } = useContext(ResumoContexto);
-
 
     return(
         <div className="container-principal">
@@ -24,8 +20,8 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                    <p>Período: 17/05/2023 a 17/05/2023</p>
-                    <p>Categoria:{categoriaSelecionada}</p>
+                    <p>Período: {dataInicial} a {dataFim}</p>
+                    <p>Categoria: {categoriaSelecionada}</p>
                 </div>
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
