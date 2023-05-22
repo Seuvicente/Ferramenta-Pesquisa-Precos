@@ -11,15 +11,15 @@ function Categorias() {
     produtosSelecionados,
     setProdutosSelecionados,
   } = useContext(ResumoContexto);
-
+   
+   
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
     useState([]);
   const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState(
     []
   );
 
-  console.log(categoriaSelecionada);
-  console.log(produtosSelecionados);
+  
   // Obtém as categorias únicas dos produtos
   const categoriasUnicas = [
     ...new Set(produtos.map((produto) => produto.categoria)),
@@ -28,6 +28,7 @@ function Categorias() {
   // Atualiza a categoria selecionada no estado
   const handleCategoriaChange = (event) => {
     setCategoriaSelecionada(event.target.value);
+    setProdutosSelecionados([])
   };
 
   // Adiciona ou remove um produto da matriz de produtos selecionados
@@ -87,11 +88,7 @@ function Categorias() {
     }
   );
 
-  // Exibe a matriz produtosSelecionadosArray no console do navegador
-  useEffect(() => {
-    console.log(produtosSelecionadosArray);
-  }, [produtosSelecionadosArray]);
-
+   
   return (
     <div>
       <div className="CategoriasProdutos">
