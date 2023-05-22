@@ -7,8 +7,16 @@ export default function CardProdutosResumo(){
     
     const {
         produtosSelecionadosArray,
-        produtosSelecionados
+        
       } = useContext(ResumoContexto);
+
+    //   function limitarTexto(string, maxCaracteres) {
+    //     if (string.length <= maxCaracteres) {
+    //       return string;
+    //     } else {
+    //       return string.substring(0, maxCaracteres) + "...";
+    //     }
+    // }
     
     return(
        
@@ -16,8 +24,10 @@ export default function CardProdutosResumo(){
             {console.log(produtosSelecionadosArray)}
 
             {produtosSelecionadosArray ? produtosSelecionadosArray.map((produto)=>( 
-                
-                <span className='item-produto'>{produto.nome}<p className='X'>X</p></span>
+                <div className='card-flag-resumo' >
+                    <span title={produto.nome}  className='item-produto'>{produto.nome}</span>
+                    <p className='X'>X</p>
+                </div>
                 
                 
             )):<></>}        

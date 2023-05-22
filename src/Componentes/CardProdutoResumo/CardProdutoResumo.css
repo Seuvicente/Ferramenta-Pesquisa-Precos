@@ -8,21 +8,34 @@
     margin: .5em auto;
 }
 
-.item-produto{
+.card-flag-resumo{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: nowrap;
-    background-color: #0053a6dc;
+    background-color: #0053a6;
     border-radius: 10px;
-    color: #ffffff;
     font-size: .8rem;
     font-weight: 700;
-    width: 30%;
-    height: 0.8rem;
-    padding: .4em;
+    width: 40%;
+    height:25%;
+    padding: 1rem ;
+    margin:.2rem;
+
 }
 
-.item-produto:hover{
-    background-color: #0054A6;
+.item-produto{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    justify-content: center;
+    width: auto;
+    background-color:transparent;
+    align-items: center;
+    height: auto;
+    color: #ffffff;
+    font-size: 1.2em;
+    -webkit-line-clamp: 2;
 }
+
