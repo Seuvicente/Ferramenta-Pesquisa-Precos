@@ -13,12 +13,9 @@ function Categorias() {
     produtosSelecionadosArray, 
     setProdutosSelecionadosArray
   } = useContext(ResumoContexto);
-   
-   
+    
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
     useState([]);
-  
-
   
   // Obtém as categorias únicas dos produtos
   const categoriasUnicas = [
@@ -28,6 +25,7 @@ function Categorias() {
   // Atualiza a categoria selecionada no estado
   const handleCategoriaChange = (event) => {
     setCategoriaSelecionada(event.target.value);
+    setProdutosSelecionadosArray([])
     setProdutosSelecionados([])
   };
 
