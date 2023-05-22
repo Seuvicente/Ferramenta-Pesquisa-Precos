@@ -55,11 +55,11 @@ export default function CardLojas() {
           />
         </div>
 
-
         <div className='caixa'>
           <ul className='lista-lojas'>
             {lojasFiltradas.map((loja) => (
               <li className='lista-lojas__item' key={loja.codigo}>
+                {loja.nomeFilial}
                 <input type="checkbox"
                   className='lista-lojas__checkbox'
                   onClick={() => handleCheckboxClick(loja)}
@@ -67,7 +67,6 @@ export default function CardLojas() {
                   checked={listaLojas.includes(loja.nomeFilial)}
                 />
 
-                {loja.nomeFilial}
               </li>
             ))}
           </ul>

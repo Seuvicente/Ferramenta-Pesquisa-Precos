@@ -12,6 +12,8 @@
     margin-right: 10px;
     color: #808080;
     font-size: 19px;
+    font-family: var(--fonte-Textos);
+    
 }
 
 .setaCategorias{
@@ -27,33 +29,31 @@
     align-items: center;
     height: 315px;
     overflow-y: auto;
+    font-family: var(--fonte-Textos);
+    
 }
 
 .corp{
     padding: 5px;
-    font-size: 15px;
+    font-size: 13px;
     margin: 10px 5px 10px 5px;
     align-items: center;
     display: flex;
-    background-color: hsl(0, 0%, 95%);
+    background-color: rgba(217, 217, 217, 0.2);
     justify-content: space-between;
     width: 328px;
     height: 40px;
     border-radius: 10px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+   
 } 
 .checkBox{
     
     margin-right: 10px;
 }
-/*      width: 328px;
-    height: 40px;
-    border: 1px solid #ccc; */
-    /* Estilos para a barra de rolagem */
-
 
 .produtos::-webkit-scrollbar {
-    width: 4px; /* Largura da barra de rolagem */
+    width: 4px; 
     
   }
   
@@ -63,11 +63,11 @@
   }
   
 .produtos::-webkit-scrollbar-thumb {
-    background-color: #0053a6cb;; /* Cor do "polegar" da barra de rolagem */
+    background-color: #0053a6cb; /* Cor do "polegar" da barra de rolagem */
     border-radius: 5px;
   }
   
 .produtos::-webkit-scrollbar-thumb:hover {
-    background-color: #0054A6; /* Cor do "polegar" da barra de rolagem ao passar o mouse */
+    background-color: var(--CorPrincipal) /* Cor do "polegar" da barra de rolagem ao passar o mouse */
 
   }

@@ -18,6 +18,7 @@
 
 .styleProduto{
     border-top: #0054A6 solid 2px;
+    margin-top: 3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,4 +31,5 @@
     color: #0054A6;
     font-size: 26px;
     font-weight: bold;
+    font-family: var(--fonte-Titulos);
 }
