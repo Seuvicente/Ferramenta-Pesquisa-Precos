@@ -7,7 +7,7 @@ import './reset.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ContextoProvider>
-        <App/>
+     <App/>
     </ContextoProvider>
     
  

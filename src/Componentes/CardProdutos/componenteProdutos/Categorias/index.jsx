@@ -2,7 +2,7 @@ import "./style.css";
 import { useState, useEffect, useContext } from "react";
 import produtos from "../../../../../produtos.json";
 import LupaProdutos from "../LupaProdutos/index";
-import {ResumoContexto}  from "../../../../Contexto/contexto";
+import {ResumoContexto}  from "../../../../Contexto/Contexto";
 
 function Categorias() {
   const {
@@ -10,15 +10,12 @@ function Categorias() {
     setCategoriaSelecionada,
     produtosSelecionados,
     setProdutosSelecionados,
+    produtosSelecionadosArray, 
+    setProdutosSelecionadosArray
   } = useContext(ResumoContexto);
-   
-   
+    
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
     useState([]);
-  const [produtosSelecionadosArray, setProdutosSelecionadosArray] = useState(
-    []
-  );
-
   
   // Obtém as categorias únicas dos produtos
   const categoriasUnicas = [
@@ -28,6 +25,7 @@ function Categorias() {
   // Atualiza a categoria selecionada no estado
   const handleCategoriaChange = (event) => {
     setCategoriaSelecionada(event.target.value);
+    setProdutosSelecionadosArray([])
     setProdutosSelecionados([])
   };
 

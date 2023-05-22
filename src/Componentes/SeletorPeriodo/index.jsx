@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { useContext} from 'react'
+import { ResumoContexto } from '../../Contexto/Contexto'
 import './SeletorPeriodo.css'
 
 
 export default function SeletorPeriodo(){
     
-    const [dataInicio, setDataInicio] = useState('')
-    const [dataFim, setDataFim] = useState('')
+    const {dataInicio, setDataInicio,dataFim, setDataFim} = useContext(ResumoContexto)
     
-    console.log(dataFim)
     console.log(dataInicio)
+    console.log(dataFim)
+    
 
     return(
         <div className="container-datas">
