@@ -5,7 +5,7 @@ import './SeletorPeriodo.css'
 
 export default function SeletorPeriodo(){
     
-    const {dataInicio, setDataInicio,dataFim, setDataFim} = useContext(ResumoContexto)
+    const {dataInicio, setDataInicio, dataFim, setDataFim} = useContext(ResumoContexto)
     
     console.log(dataInicio)
     console.log(dataFim)
@@ -16,7 +16,7 @@ export default function SeletorPeriodo(){
             <div className="dataInicio">
                 <input 
                  type="datetime-local"
-                 value={dataInicio}
+                 value={dataFim}
                  id='dataInicio'
                  className='input-data' 
                  onChange={e => setDataInicio(e.target.value)} 

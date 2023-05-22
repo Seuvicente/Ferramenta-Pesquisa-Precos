@@ -28,7 +28,6 @@ function Categorias() {
     setProdutosSelecionadosArray([])
     setProdutosSelecionados([])
   };
-
   // Adiciona ou remove um produto da matriz de produtos selecionados
   const toggleProdutoSelecionado = (produtoId) => {
     const produto = produtos.find((p) => p.id === produtoId);

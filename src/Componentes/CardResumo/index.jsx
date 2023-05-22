@@ -20,7 +20,7 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                    <p>Período: {dataInicial} a {dataFim}</p>
+                    <span className='flag-periodo'>Período: {dataInicial} a {dataFim}</span>
                     <p>Categoria: {categoriaSelecionada}</p>
                 </div>
                     <div className="container-infos-Componentes">
