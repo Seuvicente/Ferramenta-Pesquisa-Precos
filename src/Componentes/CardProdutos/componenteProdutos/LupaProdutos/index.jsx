@@ -1,4 +1,4 @@
-import { CiSearch } from "react-icons/ci";
+import { SlMagnifier } from "react-icons/sl";
 import './style.css';
 
 
@@ -14,7 +14,7 @@ function LupaProdutos({ onSearch }) {
   return (
     <div className='LupaProdutos'>
       {/* Ícone de lupa */}
-      <CiSearch className="LupaIcon" />
+      <SlMagnifier className="LupaIcon" />
       {/* Campo de entrada para o termo de busca */}
       <input className="LupaProdutosInput" placeholder="Digite o produto" type="text" onChange={handleSearchChange} />
     </div>

@@ -32,7 +32,7 @@
 .corp{
     padding: 5px;
     font-size: 15px;
-    margin:10px 5px  10px 5px;
+    margin: 10px 5px 10px 5px;
     align-items: center;
     display: flex;
     background-color: hsl(0, 0%, 95%);
@@ -40,8 +40,7 @@
     width: 328px;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
 } 
 .checkBox{
     
