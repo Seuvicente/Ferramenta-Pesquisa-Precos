@@ -48,7 +48,7 @@
 }
 
 .container-montagem{
-  width: 68%;
+  width: 64%;
   background-color: var(--CorSecundaria);
   margin: 1rem 0rem 1rem 0.5rem;
   display: flex;
@@ -77,7 +77,7 @@
 }
 
 .container-resumo{
-  width: 32%;
+  width: 36%;
   background-color: #fff;
   margin: 1rem 0.5rem;
   text-align: center;

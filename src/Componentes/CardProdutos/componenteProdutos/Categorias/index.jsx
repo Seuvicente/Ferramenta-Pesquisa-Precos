@@ -1,5 +1,5 @@
 import "./style.css";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import produtos from "../../../../../produtos.json";
 import LupaProdutos from "../LupaProdutos/index";
 import {ResumoContexto}  from "../../../../Contexto/Contexto";
@@ -11,11 +11,13 @@ function Categorias() {
     produtosSelecionados,
     setProdutosSelecionados,
     produtosSelecionadosArray, 
-    setProdutosSelecionadosArray
+    setProdutosSelecionadosArray,
+    produtosFiltradosPorCategoria, 
+    setProdutosFiltradosPorCategoria,
+    
   } = useContext(ResumoContexto);
     
-  const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
-    useState([]);
+  
   
   // Obtém as categorias únicas dos produtos
   const categoriasUnicas = [
@@ -29,34 +31,14 @@ function Categorias() {
     setProdutosSelecionados([])
   };
   // Adiciona ou remove um produto da matriz de produtos selecionados
-  const toggleProdutoSelecionado = (produtoId) => {
-    const produto = produtos.find((p) => p.id === produtoId);
-
-    if (produtosSelecionados.includes(produtoId)) {
-      // Remove o produto da matriz de produtos selecionados
-      setProdutosSelecionados(
-        produtosSelecionados.filter((id) => id !== produtoId)
-      );
-
-      // Remove o produto da matriz de objetos produtosSelecionadosArray
-      setProdutosSelecionadosArray(
-        produtosSelecionadosArray.filter((p) => p.id !== produtoId)
-      );
-    } else {
-      // Adiciona o produto à matriz de produtos selecionados
-      setProdutosSelecionados([...produtosSelecionados, produtoId]);
-
-      // Adiciona o objeto completo do produto à matriz de objetos produtosSelecionadosArray
-      setProdutosSelecionadosArray([...produtosSelecionadosArray, produto]);
-    }
-  };
+ 
 
   // Filtra os produtos por categoria selecionada ou produtos selecionados
   useEffect(() => {
     const produtosFiltrados = categoriaSelecionada
       ? produtos.filter((produto) => produto.categoria === categoriaSelecionada)
       : [];
-    setProdutosFiltradosPorCategoria(produtosFiltrados);
+      setProdutosFiltradosPorCategoria(produtosFiltrados);
   }, [categoriaSelecionada, produtosSelecionados]);
 
   // Manipula a busca de produtos
@@ -71,19 +53,44 @@ function Categorias() {
   };
 
   // Ordena os produtos filtrados com base nos produtos selecionados
-  const produtosOrdenados = [...produtosFiltradosPorCategoria].sort(
-    (produtoA, produtoB) => {
-      const isSelectedA = produtosSelecionados.includes(produtoA.id);
-      const isSelectedB = produtosSelecionados.includes(produtoB.id);
-      if (isSelectedA && !isSelectedB) {
-        return -1;
-      }
-      if (!isSelectedA && isSelectedB) {
-        return 1;
-      }
-      return 0;
-    }
-  );
+
+  // const  produtosOrdenados = [...produtosFiltradosPorCategoria].sort(
+  //   (produtoA, produtoB) => {
+  //     const isSelectedA = produtosSelecionados.includes(produtoA.id);
+  //     const isSelectedB = produtosSelecionados.includes(produtoB.id);
+  //     if (isSelectedA && !isSelectedB) {
+  //       return -1;
+  //     }
+  //     if (!isSelectedA && isSelectedB) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   }
+  // );
+
+
+   const toggleProdutoSelecionado = (produtoId) => {
+     const produto = produtos.find((p) => p.id == produtoId);
+
+     if (produtosSelecionados.includes(produtoId)) {
+  //     // Remove o produto da matriz de produtos selecionados
+       setProdutosSelecionados(
+       produtosSelecionados.filter((id) => id !== produtoId)
+      );
+
+  //     // Remove o produto da matriz de objetos produtosSelecionadosArray
+       setProdutosSelecionadosArray(
+        produtosSelecionadosArray.filter((p) => p.id !== produtoId)
+       );
+     } else {
+  //     // Adiciona o produto à matriz de produtos selecionados
+       setProdutosSelecionados([...produtosSelecionados, produtoId]);
+
+  //     // Adiciona o objeto completo do produto à matriz de objetos produtosSelecionadosArray
+       setProdutosSelecionadosArray([...produtosSelecionadosArray, produto]);
+     }
+    
+   };
 
    
   return (
@@ -112,8 +119,8 @@ function Categorias() {
       {/* Componente de busca */}
       <LupaProdutos onSearch={handleSearch} />
       <div className="produtos">
-        {/* Renderiza os produtos filtrados e ordenados */}
-        {produtosOrdenados.map((produto) => (
+        {}
+        {produtosFiltradosPorCategoria.map((produto) => (
           <div className="corp" key={produto.id}>
             {produto.nome}
             {/* Checkbox para selecionar/deselecionar o produto */}

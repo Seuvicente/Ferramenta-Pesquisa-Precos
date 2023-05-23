@@ -3,13 +3,23 @@ import './CardProdutoResumo.css'
 import { useContext } from 'react';
 import {ResumoContexto}  from "../../Contexto/Contexto.jsx";
 
+
 export default function CardProdutosResumo(){
     
     const {
+        setProdutosSelecionados,
+        produtosSelecionados,
         produtosSelecionadosArray,
-        
+        setProdutosSelecionadosArray
+      
       } = useContext(ResumoContexto);
 
+
+    const removeFlag = (e)=>{
+        setProdutosSelecionadosArray(produtosSelecionadosArray.filter((x)=> x.id != e))
+        setProdutosSelecionados(produtosSelecionados.filter((x)=> x != e))
+    }
+     
     //   function limitarTexto(string, maxCaracteres) {
     //     if (string.length <= maxCaracteres) {
     //       return string;
@@ -17,16 +27,19 @@ export default function CardProdutosResumo(){
     //       return string.substring(0, maxCaracteres) + "...";
     //     }
     // }
+   
+    
     
     return(
        
         <div  className="cardProdutoResumo">
-            {console.log(produtosSelecionadosArray)}
+           
 
             {produtosSelecionadosArray ? produtosSelecionadosArray.map((produto)=>( 
-                <div className='card-flag-resumo' >
+                <div className='card-flag-resumo' key={produto}>
                     <span title={produto.nome}  className='item-produto'>{produto.nome}</span>
-                    <p className='X'>X</p>
+                    <button onClick={()=>removeFlag(produto.id)} className='X' >X</button>
+      
                 </div>
                 
                 
