@@ -8,9 +8,18 @@ import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 export default function CardResumo(){
     const {
         categoriaSelecionada,
-        dataInicial,
+        dataInicio,
         dataFim
       } = useContext(ResumoContexto);
+
+
+        function limitarTexto(string, maxCaracteres) {
+        if (string.length <= maxCaracteres) {
+          return string;
+        } else {
+          return string.substring(0, maxCaracteres);
+        }
+    }
 
     return(
         <div className="container-principal">
@@ -20,8 +29,9 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                    <span className='flag-periodo'>Período: {dataInicial} a {dataFim}</span>
-                    <p>Categoria: {categoriaSelecionada}</p>
+                   <h2 className='titulo-flag-resumo'>Período: <span className='flag-periodo'>
+                    {dataInicio + " ---- "}{dataFim}</span></h2>
+                  <h2 className='titulo-flag-resumo'>Categoria: <sapan className='flag-categoria'>{categoriaSelecionada}</sapan></h2>
                 </div>
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
