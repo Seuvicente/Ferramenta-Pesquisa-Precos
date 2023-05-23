@@ -4,7 +4,9 @@
   
 }
 .imgLogo{
-  background-color: var(--CorPrincipal);
+  background: var(--CorPrincipal);
+  margin-left: 50px;
+  margin-top: 3px;
 }
 
 :root{
