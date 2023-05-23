@@ -13,13 +13,7 @@ export default function CardResumo(){
       } = useContext(ResumoContexto);
 
 
-        function limitarTexto(string, maxCaracteres) {
-        if (string.length <= maxCaracteres) {
-          return string;
-        } else {
-          return string.substring(0, maxCaracteres);
-        }
-    }
+    
 
     return(
         <div className="container-principal">

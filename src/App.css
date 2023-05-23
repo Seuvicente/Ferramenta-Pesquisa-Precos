@@ -3,6 +3,9 @@
   padding: 0;
   
 }
+.imgLogo{
+  background-color: var(--CorPrincipal);
+}
 
 :root{
   --fonte-Titulos: 'Roboto', sans-serif;
