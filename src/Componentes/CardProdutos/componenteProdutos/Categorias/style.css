@@ -48,6 +48,9 @@
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
    
 } 
+.corp:hover{
+    background-color:rgba(217, 217, 217, 0.500);
+}
 
 .checkBox{
     

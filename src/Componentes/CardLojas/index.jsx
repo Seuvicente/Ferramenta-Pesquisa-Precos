@@ -6,7 +6,7 @@ import { SlMagnifier } from "react-icons/sl";
 import "./CardLojas.css";
 
 export default function CardLojas() {
-  const [busca, setBusca] = useState(""); // // Definindo um estado para a busca
+  const [busca, setBusca] = useState("");
 
   const [lojasSelecionadas, setLojasSelecionadas] = useState([]);
   const lowerBusca = busca.toLowerCase();
@@ -21,31 +21,23 @@ export default function CardLojas() {
   } = useContext(ResumoContexto);
 
   const handleCheckboxClick = (loja) => {
-    // checkbox;
-
     if (document.getElementById(loja.codigo).checked) {
       setListaLojas([...listaLojas, loja.nomeFilial]);
-
       setListaIdLojasSelecionadas([...listaIdLojasSelecionadas, loja.codigo]);
-    } else if (listaLojas.includes(loja.nomeFilial)) {
-      setListaLojas(listaLojas.filter((x) => x != loja.nomeFilial));
-
-      //  setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
     } else {
-      const indiceLojaSelecionada = lojasSelecionadas.findIndex(
-        (l) => l.codigo === loja.codigo
-      ); //metodo findIndex para encontrar o índice do primeiro elemento no array. erifica se o código da loja atual é igual ao código da loja passada como argumento.
-
-      if (indiceLojaSelecionada > 0) {
-        //verifican se a loja selecionada está no array
-        const newLojasSelecionadas = [...lojasSelecionadas];
-        newLojasSelecionadas.splice(indiceLojaSelecionada, 1);
-        setLojasSelecionadas(newLojasSelecionadas);
-        console.log(lojasSelecionadas);
-        lojasSelecionadas;
-      }
+      setListaLojas(listaLojas.filter((x) => x !== loja.nomeFilial));
+      setListaIdLojasSelecionadas(
+        listaIdLojasSelecionadas.filter((id) => id !== loja.codigo)
+      );
     }
   };
+
+  const handleListItemClick = (loja) => {
+    const checkbox = document.getElementById(loja.codigo);
+    checkbox.checked = !checkbox.checked;
+    handleCheckboxClick(loja);
+  };
+
   return (
     <div className="Loja_toda">
       <h1 className="TextLoja">Lojas</h1>
@@ -64,7 +56,11 @@ export default function CardLojas() {
         <div className="caixa">
           <ul className="lista-lojas">
             {lojasFiltradas.map((loja) => (
-              <li className="lista-lojas__item" key={loja.codigo}>
+              <li
+                className="lista-lojas__item"
+                key={loja.codigo}
+                onClick={() => handleListItemClick(loja)}
+              >
                 {loja.nomeFilial}
                 <input
                   type="checkbox"
