@@ -3,6 +3,7 @@ import './App.css'
 import CardLojas from './Componentes/CardLojas'
 import CardProdutos from './Componentes/CardProdutos'
 import CardResumo from './Componentes/CardResumo'
+import imagem1 from './img/logo.png'
 
 function App() {
   
@@ -10,7 +11,8 @@ function App() {
   return (
     <div className='pageView'>
       <div className='cabecalho'>
-        <p className='cabecalho-titulo'>Pesquisa</p>
+        <div className='imgLogo'><img src={imagem1} alt="logo pesquisa" /></div>
+       
       </div>
       <section className='container'>
         <div className='container-montagem'>

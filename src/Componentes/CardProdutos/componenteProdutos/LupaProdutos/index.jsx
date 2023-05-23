@@ -16,7 +16,7 @@ function LupaProdutos({ onSearch }) {
       {/* Ícone de lupa */}
       <SlMagnifier className="LupaIcon" />
       {/* Campo de entrada para o termo de busca */}
-      <input className="LupaProdutosInput" placeholder="Digite o produto" type="text" onChange={handleSearchChange} />
+      <input className="LupaProdutosInput" placeholder="Buscar produto" type="text" onChange={handleSearchChange} />
     </div>
   );
 }
