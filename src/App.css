@@ -4,7 +4,9 @@
   
 }
 .imgLogo{
-  background-color: var(--CorPrincipal);
+  background: var(--CorPrincipal);
+  margin-left: 50px;
+  margin-top: 3px;
 }
 
 :root{
@@ -66,7 +68,7 @@
 }
 
 .cards-montagem{
-  background-color: var(--CorPrincipal);
+  /* background-color: var(--CorPrincipal); */
   display: flex;
   flex-direction: row;
   justify-content: space-around;

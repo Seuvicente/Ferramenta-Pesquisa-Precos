@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='pageView'>
       <div className='cabecalho'>
-        <div className='imgLogo'><img src={imagem1} alt="logo pesquisa" /></div>
+        <img className='imgLogo'src={imagem1} alt="logo pesquisa" />
        
       </div>
       <section className='container'>
