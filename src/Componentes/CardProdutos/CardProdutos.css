@@ -24,13 +24,14 @@
     flex-direction: column;
     align-items: center;
     background-color: #FFFFFF;
-    height: 390px;
-    width: 360px;
+    height: 400px;
+    width: 380px;
 }
 .produtosText{
     margin: 0px;
     color: #0054A6;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: bold;
     font-family: var(--fonte-Titulos);
+
 }
