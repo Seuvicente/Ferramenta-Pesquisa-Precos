@@ -41,11 +41,27 @@
     border:1px solid #000;
     font-weight: bold;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 40px;
     text-align: start;
-    font-size: 1.1rem;
+    
 }
-
+.titulo-flag-resumo{
+    display:flex;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    
+    font-family: sans-serif;
+}
+.flag-periodo{
+    display: flex;
+    align-self: flex-end;
+    margin-left: 1.5rem;
+    background-color: #D9D9D970;
+    color: #0054A6;
+    font-size: 1rem;
+    padding: .5rem;
+}
 .container-info-topo p{
     margin-bottom: 1rem;
 }

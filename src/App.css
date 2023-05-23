@@ -50,7 +50,7 @@
 }
 
 .container-montagem{
-  width: 70%;
+  width: 68%;
   background-color: var(--CorSecundaria);
   margin: 1rem 0rem 1rem 0.5rem;
   display: flex;
@@ -61,7 +61,6 @@
 
 .selecao-periodo{
   width:100%;
-  height: 15vh;
   background-color: var(--CorSecundaria);
   display: flex;
   align-items: center;
@@ -80,7 +79,7 @@
 }
 
 .container-resumo{
-  width: 30%;
+  width: 32%;
   background-color: #fff;
   margin: 1rem 0.5rem;
   text-align: center;
