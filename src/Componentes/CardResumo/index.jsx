@@ -8,6 +8,8 @@ import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 export default function CardResumo(){
     const {
         categoriaSelecionada,
+        setProdutosSelecionados,
+        setProdutosSelecionadosArray,
         setCategoriaSelecionada,
         dataInicio,
         dataFim,
@@ -18,6 +20,9 @@ export default function CardResumo(){
 
     function removeFlagCategoria(){
         setCategoriaSelecionada("") 
+        setProdutosSelecionados([])
+        setProdutosSelecionadosArray([])
+    
     }
 
     function removeFlagDataInicio(){
@@ -48,15 +53,20 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                   <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<><span className='flag-periodo'>
-                    {inverteData(dataInicio)}
-                    <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
-                     </span> </>):<><span className='flag-periodo-vazia'></span></>}
-                      <span className=''>até</span> 
-                     {dataFim?(<><span className='flag-periodo'>
-                    {inverteData(dataFim)}
-                    <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
-                    </span></>):<><span className='flag-periodo-vazia'></span></>} </h2>
+                   <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<>
+                        <div className='flag-periodo'>
+                            {inverteData(dataInicio)}
+                            <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
+                            </div> </>):
+                            <><span className='flag-periodo-vazia'></span></>}
+                            <span className=''>até</span> 
+                            {dataFim?(<>
+                        <div className='flag-periodo'>
+                            {inverteData(dataFim)}
+                            <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
+                            </div></>):
+                            <><span className='flag-periodo-vazia'></span></>} 
+                    </h2>
                   
                   <h2 className='titulo-flag-resumo'>Categoria: {categoriaSelecionada?(<><div className='flag-categoria' value={"div"}>{categoriaSelecionada}
                   <button onClick={()=> removeFlagCategoria()} className='botao-exclui-flag' >x</button>
