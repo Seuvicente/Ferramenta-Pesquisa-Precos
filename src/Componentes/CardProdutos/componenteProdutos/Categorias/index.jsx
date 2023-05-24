@@ -91,7 +91,9 @@ function Categorias() {
       <LupaProdutos onSearch={handleSearch} />
       <div className="produtos">
         {produtosFiltradosPorCategoria.map((produto) => (
-          <div className="corp" key={produto.id} onClick={() => toggleProdutoSelecionado(produto.id)}>
+          <div className="corp" 
+            key={produto.id} 
+            onClick={() => toggleProdutoSelecionado(produto.id)}>
             {produto.nome}
             {/* Checkbox para selecionar/deselecionar o produto */}
             <input

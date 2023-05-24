@@ -31,43 +31,87 @@
     flex-direction: column;
     height: 100%;
     width: 90%;
-    background-color: #0054A6;
-    color: #0054A6;
-    border:1px solid #000
+    background-color: #ffffff;
+    color: #0054A6; 
 }
 
 .container-info-topo{
     height: 20%;
-    border:1px solid #000;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    column-gap: 40px;
     text-align: start;
-    
 }
 .titulo-flag-resumo{
     display:flex;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     font-size: 1.2rem;
-    
+    color:#808080;;
     font-family: sans-serif;
 }
 .flag-periodo{
     display: flex;
-    align-self: flex-end;
+    text-align: center;
+    justify-content: space-between;
+    width: 25%;
     margin-left: 1.5rem;
+    margin-right: 1.5rem;
     background-color: #D9D9D970;
     color: #0054A6;
     font-size: 1rem;
-    padding: .5rem;
+    padding: 0px 5px;
+    font-family: 'Roboto';
+    align-items: center;
+    gap: 5px;
 }
+
+.flag-periodo-vazia{
+    display: flex;
+    align-self: flex-end;
+    width: 25%;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    background-color: #fff;
+    color: #0054A6;
+    font-size: 1rem;
+    padding: 0px 5px;
+}
+
+.flag-categoria{
+    background-color:#D9D9D970;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.botao-exclui-flag{
+    border: none;
+    background-color: #D9D9D970;
+    font-size: 1rem;
+    text-align: center;
+    margin: 2px 0px 2px 2px;
+    color:#ff0000;
+}
+
+.botao-exclui-flag:hover{
+    border: none;
+    background-color: #D9D9D970;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px 0px 2px 2px;
+    color:#ff0000;
+}
+
 .container-info-topo p{
     margin-bottom: 1rem;
 }
 
 .container-infos-Componentes{
-    height: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     
@@ -89,8 +133,27 @@
 }
 
 .container-info-produtos{
-    width:100%;
+    width: 100%;
     height: 50%;
     text-align: start;
+    margin-top: 2rem;
     
+}
+
+.botao-confirma{
+    align-items: center;
+    align-self: center;
+    background-color: #0054A6;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    width: 40%;
 }

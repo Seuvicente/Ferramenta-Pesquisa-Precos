@@ -8,10 +8,35 @@ import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 export default function CardResumo(){
     const {
         categoriaSelecionada,
+        setCategoriaSelecionada,
         dataInicio,
-        dataFim
+        dataFim,
+        setDataInicio,
+        setDataFim
       } = useContext(ResumoContexto);
 
+
+    function removeFlagCategoria(){
+        setCategoriaSelecionada("") 
+    }
+
+    function removeFlagDataInicio(){
+        setDataInicio("")
+    }
+
+    function removeFlagDataFim(){
+        setDataFim("")
+    }
+
+    function inverteData(data){
+        const partes = data.split('-');
+        const ano = partes[0];
+        const mes = partes[1];
+        const dia = partes[2];
+        const dataInvertida = `${dia}/${mes}/${ano}`;
+        return dataInvertida;
+          
+    }
 
     
 
@@ -23,9 +48,19 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                   <h2 className='titulo-flag-resumo'>Período: <span className='flag-periodo'>
-                    {dataInicio + " ---- "}{dataFim}</span></h2>
-                  <h2 className='titulo-flag-resumo'>Categoria: <sapan className='flag-categoria'>{categoriaSelecionada}</sapan></h2>
+                   <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<><span className='flag-periodo'>
+                    {inverteData(dataInicio)}
+                    <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
+                     </span> </>):<><span className='flag-periodo-vazia'></span></>}
+                      <span className=''>até</span> 
+                     {dataFim?(<><span className='flag-periodo'>
+                    {inverteData(dataFim)}
+                    <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
+                    </span></>):<><span className='flag-periodo-vazia'></span></>} </h2>
+                  
+                  <h2 className='titulo-flag-resumo'>Categoria: {categoriaSelecionada?(<><div className='flag-categoria' value={"div"}>{categoriaSelecionada}
+                  <button onClick={()=> removeFlagCategoria()} className='botao-exclui-flag' >x</button>
+                  </div></>):<></>} </h2>
                 </div>
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
@@ -33,13 +68,14 @@ export default function CardResumo(){
                         <CardLojaResumo/>
                     </div>
                     <div className="container-info-produtos">
-                        <h2>Produtos</h2>
+                        <h2 className='titulo-loja-resumo'>Produtos</h2>
                         <CardProdutosResumo/>
                     </div>
                 </div>
+                <button className='botao-confirma'>Confirmar</button>  
             </div>
 
-        <button>Confirmar</button>    
+          
         </div>
     )
 }

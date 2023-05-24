@@ -20,13 +20,7 @@ export default function CardProdutosResumo(){
         setProdutosSelecionados(produtosSelecionados.filter((x)=> x != e))
     }
      
-    //   function limitarTexto(string, maxCaracteres) {
-    //     if (string.length <= maxCaracteres) {
-    //       return string;
-    //     } else {
-    //       return string.substring(0, maxCaracteres) + "...";
-    //     }
-    // }
+    
    
     
     
