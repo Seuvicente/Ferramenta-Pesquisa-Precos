@@ -17,6 +17,8 @@ export default function CardProdutosResumo(){
         setProdutosSelecionadosArray(produtosSelecionadosArray.filter((x)=> x.id != e))
         setProdutosSelecionados(produtosSelecionados.filter((x)=> x != e))
     }
+
+    
         
     return(
        

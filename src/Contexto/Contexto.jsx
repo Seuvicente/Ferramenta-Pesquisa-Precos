@@ -17,9 +17,20 @@ export function ContextoProvider({ children }) {
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
     useState([]);
 
+    const pesquisa = {
+      lojas: listaIdLojasSelecionadas,
+      dateIni: dataInicio,
+      dateFin: dataFim,
+      categoria: categoriaSelecionada,
+      produtos: produtosSelecionadosArray,
+      respostas: [],
+    };
+
+
   return (
     <ResumoContexto.Provider
       value={{
+        pesquisa,
         excluiListaGlobal,
         setExcluiListaGlobal,
         produtosFiltradosPorCategoria, 

@@ -1,13 +1,10 @@
 *{
     background-color:#fff;
 }
-/* .globalTelaProdutos{
-    display: flex;
-    align-items: center;
-    background-color: rgb(240, 240, 240);
-    width: 100vw;
-    height: 100vh;
-} */
+
+.globalTelaProdutos{
+    margin-left: 1rem;
+}
 
 .telaProdutos{
     display: flex;
@@ -25,7 +22,7 @@
     align-items: center;
     background-color: #FFFFFF;
     height: 480px;
-    width: 480px;
+    width: 494px;
 }
 .produtosText{
     margin: 0px;

@@ -42,4 +42,22 @@
     border:none;
 }
 
+.cardlojaresumo::-webkit-scrollbar {
+    width: 4px; 
+    
+  }
+  
+.cardlojaresumo::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Cor de fundo da trilha da barra de rolagem */
+    
+  }
+  
+.cardlojaresumo::-webkit-scrollbar-thumb {
+    background-color: #0053a6cb; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 5px;
+  }
+  
+.cardlojaresumo::-webkit-scrollbar-thumb:hover {
+    background-color: var(--CorPrincipal) /* Cor do "polegar" da barra de rolagem ao passar o mouse */
 
+  }

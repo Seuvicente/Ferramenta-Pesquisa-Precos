@@ -68,14 +68,13 @@
 }
 
 .cards-montagem{
-  /* background-color: var(--CorPrincipal); */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 70vh;
-  width: 100%;
-  align-items: center;
-
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 70vh;
+      width: 100%;
+      align-items: center;
+      padding-left: 2rem;
 }
 
 .container-resumo{

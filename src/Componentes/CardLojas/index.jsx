@@ -46,6 +46,7 @@ export default function CardLojas() {
       }
     }
   };
+
   return (
     <div className="Loja_toda">
       <h1 className="TextLoja">Lojas</h1>
@@ -60,6 +61,7 @@ export default function CardLojas() {
             className="busca"
           />
         </div>
+
         <div className="caixa">
           <ul className="lista-lojas">
             {lojasFiltradas.map((loja) => (

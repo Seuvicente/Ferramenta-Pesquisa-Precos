@@ -4,6 +4,7 @@ import CardLojaResumo from '../CardLojaResumo'
 import CardProdutosResumo from '../CardProdutoResumo'
 import { useContext } from 'react'
 import { ResumoContexto } from '../../Contexto/Contexto.jsx'
+import BotaoEnviarPesquisa from '../BotaoEnviarPesquisa'
 
 export default function CardResumo(){
     const {
@@ -11,6 +12,8 @@ export default function CardResumo(){
         setProdutosSelecionados,
         setProdutosSelecionadosArray,
         setCategoriaSelecionada,
+        setListaLojas,
+        setListaIdLojasSelecionadas,
         dataInicio,
         dataFim,
         setDataInicio,
@@ -43,6 +46,16 @@ export default function CardResumo(){
           
     }
 
+    function limpaCampoProduto(){
+        setProdutosSelecionados([])
+        setProdutosSelecionadosArray([])
+    }
+
+    function limpaCampoLoja(){
+        setListaLojas([])
+        setListaIdLojasSelecionadas([])
+    }
+    
     
 
     return(
@@ -75,14 +88,16 @@ export default function CardResumo(){
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
                         <h2 className='titulo-loja-resumo'>Lojas</h2>
+                        <button className='botao-limpar-lojas' onClick={()=>limpaCampoLoja()}>Limpar</button>
                         <CardLojaResumo/>
                     </div>
                     <div className="container-info-produtos">
                         <h2 className='titulo-loja-resumo'>Produtos</h2>
+                        <button className='botao-limpar-produtos' onClick={()=>limpaCampoProduto()}>Limpar</button>
                         <CardProdutosResumo/>
                     </div>
                 </div>
-                <button className='botao-confirma'>Confirmar</button>  
+                    <BotaoEnviarPesquisa/>     
             </div>
 
           

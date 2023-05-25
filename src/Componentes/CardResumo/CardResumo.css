@@ -57,7 +57,7 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
-    width: 25%;
+    width: 30%;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     background-color: #D9D9D970;
@@ -72,7 +72,7 @@
 .flag-periodo-vazia{
     display: flex;
     align-self: flex-end;
-    width: 25%;
+    width: 30%;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     background-color: #fff;
@@ -89,8 +89,7 @@
     justify-content: space-between;
     padding: 2px 5px;
     font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Inter';
+    font-family: 'Roboto';
     font-style: normal;
     color: #0054A6;
     line-height: 19px;
@@ -100,6 +99,7 @@
 .botao-exclui-flag{
     border: none;
     background-color: #D9D9D940;
+    font-family: 'Roboto';
     font-size: 1rem;
     text-align: center;
     padding: 0px 5px;
@@ -133,8 +133,6 @@
     width:100%;
     height: 35%;
     text-align: start;
-    
-    
 }
 
 .titulo-loja-resumo{
@@ -144,6 +142,19 @@
     font-weight: 500;
     line-height: 24px;
     color: #000000;
+    display: inline-block;
+}
+
+.botao-limpar-lojas{
+    margin-left: 284px;
+    display: inline-block;
+    padding: 0 1rem;;
+}
+
+.botao-limpar-produtos{
+    margin-left: 254px;
+    display: inline-block;
+    padding: 0 1rem;;
 }
 
 .container-info-produtos{
@@ -154,20 +165,4 @@
     
 }
 
-.botao-confirma{
-    align-items: center;
-    align-self: center;
-    background-color: #0080FD;
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
-    color: #fff;
-    display: flex;
-    font-size: 1.2rem;
-    font-weight: bold;
-    height: 4rem;
-    justify-content: center;
-    margin: 1rem 0rem;
-    text-align: center;
-    width: 40%;
-}
+.
