@@ -8,7 +8,7 @@ export default function CardLojaResumo(){
     const removeFlag = (e)=>{
       setListaLojas(listaLojas.filter((x)=>x != e))
     }
-
+    
       function limitarTexto(string, maxCaracteres) {
         if (string.length <= maxCaracteres) {
           return string;

@@ -46,7 +46,7 @@ input:focus {
     align-items: center;
     display: flex;
     padding: 0;
-    width: 328px;
+    width: 280px;
     height: 45px;
     margin: 10px;
     border: 1.5px solid #808080;
@@ -60,7 +60,7 @@ input:focus {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    width: 335px;
+    width: 280px;
     height: 50px;
     border-radius: 10px;
     background: rgba(217, 217, 217, 0.200);
@@ -78,8 +78,6 @@ input:focus {
     height: 260px;
 }
 
-
-
 .TextLoja {
     margin: 0;
     color: #0054A6;
@@ -89,8 +87,8 @@ input:focus {
 }
 
 .caixa {
-    width: 384;
-    height: 310px;
+    width: 302px;
+    height: 380px;
     overflow: auto;
     border-radius: 7px;
     /* position: absolute; */
@@ -119,8 +117,8 @@ input:focus {
     flex-direction: column;
     align-items: center;
     margin-top: 3px;
-    height: 400px;
-    width:380px;
+    height: 480px;
+    width:330px;
 }
 
 .caixa::-webkit-scrollbar {

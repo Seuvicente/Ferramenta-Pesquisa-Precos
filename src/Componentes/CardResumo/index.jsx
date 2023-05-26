@@ -4,11 +4,16 @@ import CardLojaResumo from '../CardLojaResumo'
 import CardProdutosResumo from '../CardProdutoResumo'
 import { useContext } from 'react'
 import { ResumoContexto } from '../../Contexto/Contexto.jsx'
+import BotaoEnviarPesquisa from '../BotaoEnviarPesquisa'
 
 export default function CardResumo(){
     const {
         categoriaSelecionada,
+        setProdutosSelecionados,
+        setProdutosSelecionadosArray,
         setCategoriaSelecionada,
+        setListaLojas,
+        setListaIdLojasSelecionadas,
         dataInicio,
         dataFim,
         setDataInicio,
@@ -18,6 +23,9 @@ export default function CardResumo(){
 
     function removeFlagCategoria(){
         setCategoriaSelecionada("") 
+        setProdutosSelecionados([])
+        setProdutosSelecionadosArray([])
+    
     }
 
     function removeFlagDataInicio(){
@@ -38,6 +46,16 @@ export default function CardResumo(){
           
     }
 
+    function limpaCampoProduto(){
+        setProdutosSelecionados([])
+        setProdutosSelecionadosArray([])
+    }
+
+    function limpaCampoLoja(){
+        setListaLojas([])
+        setListaIdLojasSelecionadas([])
+    }
+    
     
 
     return(
@@ -48,15 +66,20 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
-                   <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<><span className='flag-periodo'>
-                    {inverteData(dataInicio)}
-                    <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
-                     </span> </>):<><span className='flag-periodo-vazia'></span></>}
-                      <span className=''>até</span> 
-                     {dataFim?(<><span className='flag-periodo'>
-                    {inverteData(dataFim)}
-                    <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
-                    </span></>):<><span className='flag-periodo-vazia'></span></>} </h2>
+                   <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<>
+                        <div className='flag-periodo'>
+                            {inverteData(dataInicio)}
+                            <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
+                            </div> </>):
+                            <><span className='flag-periodo-vazia'></span></>}
+                            <span className=''>até</span> 
+                            {dataFim?(<>
+                        <div className='flag-periodo'>
+                            {inverteData(dataFim)}
+                            <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
+                            </div></>):
+                            <><span className='flag-periodo-vazia'></span></>} 
+                    </h2>
                   
                   <h2 className='titulo-flag-resumo'>Categoria: {categoriaSelecionada?(<><div className='flag-categoria' value={"div"}>{categoriaSelecionada}
                   <button onClick={()=> removeFlagCategoria()} className='botao-exclui-flag' >x</button>
@@ -65,14 +88,16 @@ export default function CardResumo(){
                     <div className="container-infos-Componentes">
                     <div className="container-info-lojas">
                         <h2 className='titulo-loja-resumo'>Lojas</h2>
+                        <button className='botao-limpar-lojas' onClick={()=>limpaCampoLoja()}>Limpar</button>
                         <CardLojaResumo/>
                     </div>
                     <div className="container-info-produtos">
                         <h2 className='titulo-loja-resumo'>Produtos</h2>
+                        <button className='botao-limpar-produtos' onClick={()=>limpaCampoProduto()}>Limpar</button>
                         <CardProdutosResumo/>
                     </div>
                 </div>
-                <button className='botao-confirma'>Confirmar</button>  
+                    <BotaoEnviarPesquisa/>     
             </div>
 
           

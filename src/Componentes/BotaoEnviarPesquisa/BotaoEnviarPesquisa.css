@@ -1,0 +1,17 @@
+.botao-enviar-pesquisa{
+    align-items: center;
+    align-self: center;
+    background-color: #0080FD;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    margin: 1rem 0rem;
+    text-align: center;
+    width: 40%;
+}
