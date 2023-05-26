@@ -13,14 +13,16 @@ export function ContextoProvider({ children }) {
   const [listaIdLojasSelecionadas, setListaIdLojasSelecionadas] = useState([]);
   const [dataInicio, setDataInicio] = useState("");
   const [dataFim, setDataFim] = useState("");
+  const [dataInicioISO,setDataInicioISO] = useState("");
+  const [dataFimISO, setDataFimISO] = useState("");
   const [excluiListaGlobal, setExcluiListaGlobal] = useState([]);
-  const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =
-    useState([]);
+  const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =useState([]);
+  const [erroData, setDataErro] = useState("")
 
     const pesquisa = {
       lojas: listaIdLojasSelecionadas,
-      dateIni: dataInicio,
-      dateFin: dataFim,
+      dateIni: dataInicioISO,
+      dateFin: dataFimISO,
       categoria: categoriaSelecionada,
       produtos: produtosSelecionadosArray,
       respostas: [],
@@ -33,6 +35,10 @@ export function ContextoProvider({ children }) {
         pesquisa,
         excluiListaGlobal,
         setExcluiListaGlobal,
+        setDataFimISO,
+        dataFimISO,
+        setDataInicioISO,
+        dataInicioISO,
         produtosFiltradosPorCategoria, 
         setProdutosFiltradosPorCategoria,
         produtosSelecionadosArray,
@@ -51,6 +57,8 @@ export function ContextoProvider({ children }) {
         setCategoriaSelecionada,
         produtosSelecionados,
         setProdutosSelecionados,
+        erroData, 
+        setDataErro
       }}
     >
       {children}

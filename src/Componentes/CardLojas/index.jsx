@@ -23,27 +23,16 @@ export default function CardLojas() {
   const handleCheckboxClick = (loja) => {
     // checkbox;
 
-    if (document.getElementById(loja.codigo).checked) {
-      setListaLojas([...listaLojas, loja.nomeFilial]);
+    if (listaLojas.includes(loja.nomeFilial)) {
+      setListaLojas(listaLojas.filter((x) => x !== loja.nomeFilial));
 
-      setListaIdLojasSelecionadas([...listaIdLojasSelecionadas, loja.codigo]);
-    } else if (listaLojas.includes(loja.nomeFilial)) {
-      setListaLojas(listaLojas.filter((x) => x != loja.nomeFilial));
-
-      //  setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
+      setListaIdLojasSelecionadas(
+        listaIdLojasSelecionadas.filter((x) => x != loja.codigo)
+      );
     } else {
-      const indiceLojaSelecionada = lojasSelecionadas.findIndex(
-        (l) => l.codigo === loja.codigo
-      ); //metodo findIndex para encontrar o índice do primeiro elemento no array. erifica se o código da loja atual é igual ao código da loja passada como argumento.
-
-      if (indiceLojaSelecionada > 0) {
-        //verifican se a loja selecionada está no array
-        const newLojasSelecionadas = [...lojasSelecionadas];
-        newLojasSelecionadas.splice(indiceLojaSelecionada, 1);
-        setLojasSelecionadas(newLojasSelecionadas);
-        console.log(lojasSelecionadas);
-        lojasSelecionadas;
-      }
+      setListaLojas([...listaLojas, loja.nomeFilial]);
+      setListaIdLojasSelecionadas([...listaIdLojasSelecionadas, loja.codigo]);
+      //  setLojasSelecionadas([...lojasSelecionadas, loja]); // Adiciona a loja selecionada ao estado de lojas selecionadas;
     }
   };
 
@@ -63,25 +52,28 @@ export default function CardLojas() {
         </div>
 
         <div className="caixa">
-          <ul className="lista-lojas">
+          <div className="lista-lojas">
             {lojasFiltradas.map((loja) => (
-              <li
+              <div
                 className="lista-lojas__item"
                 key={loja.codigo}
-                onClick={()=> handleCheckboxClick(loja)}
+                onClick={() => handleCheckboxClick(loja)}
               >
                 {loja.nomeFilial}
                 <input
                   type="checkbox"
                   className="lista-lojas__checkbox"
-                  onClick={() => handleCheckboxClick(loja)}
+                  onChange={() => handleCheckboxClick(loja)}
                   id={loja.codigo}
-                  checked={listaLojas.includes(loja.nomeFilial)}
+                  checked={
+                    listaLojas.includes(loja.nomeFilial) &&
+                    listaIdLojasSelecionadas.includes(loja.codigo)
+                  }
                 />
-              </li>
+              </div>
             ))}
-          </ul>
-        </div>
+          </div>
+        </div>{console.log(listaLojas)}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import CardProdutosResumo from '../CardProdutoResumo'
 import { useContext } from 'react'
 import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 import BotaoEnviarPesquisa from '../BotaoEnviarPesquisa'
+import { useState } from 'react'
 
 export default function CardResumo(){
     const {
@@ -16,16 +17,22 @@ export default function CardResumo(){
         setListaIdLojasSelecionadas,
         dataInicio,
         dataFim,
+        setDataInicioISO,
+        dataInicioISO,
+        setDataFimISO,
+        dataFimISO,
         setDataInicio,
-        setDataFim
+        setDataFim,
+        erroData, 
+        setDataErro,
       } = useContext(ResumoContexto);
 
+      
 
     function removeFlagCategoria(){
         setCategoriaSelecionada("") 
         setProdutosSelecionados([])
         setProdutosSelecionadosArray([])
-    
     }
 
     function removeFlagDataInicio(){
@@ -36,15 +43,48 @@ export default function CardResumo(){
         setDataFim("")
     }
 
-    function inverteData(data){
+    function inverteDataInicio(data){
         const partes = data.split('-');
         const ano = partes[0];
         const mes = partes[1];
         const dia = partes[2];
         const dataInvertida = `${dia}/${mes}/${ano}`;
-        return dataInvertida;
-          
+        formataDataInicio(data)
+        return dataInvertida;  
     }
+    function formataDataInicio(data){
+        const dataFormatada = `${data}T12:00:00`
+        setDataInicioISO(dataFormatada)
+        console.log(dataInicioISO)
+        return dataFormatada
+    }
+
+    // const dataIniNum = Num(dataInicio)
+    // const dataFimNum = Num(dataFim)
+
+
+    function inverteDataFim(data){
+        if(dataFim > dataInicio){
+        const partes = data.split('-');
+        const ano = partes[0];
+        const mes = partes[1];
+        const dia = partes[2];
+        const dataInvertida = `${dia}/${mes}/${ano}`;
+        formataDataFim(data)
+        setDataErro("")
+        return dataInvertida;
+        }
+        setDataFim("")
+        setDataErro("Data final inválida !")
+    }
+
+    function formataDataFim(data){
+        const dataFormatada = `${data}T23:59:00`
+        setDataFimISO(dataFormatada)
+        console.log(dataFimISO)
+        return dataFormatada;
+    }
+    
 
     function limpaCampoProduto(){
         setProdutosSelecionados([])
@@ -68,14 +108,14 @@ export default function CardResumo(){
                 <div className="container-info-topo">
                    <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<>
                         <div className='flag-periodo'>
-                            {inverteData(dataInicio)}
+                            {inverteDataInicio(dataInicio)}
                             <button onClick={()=> removeFlagDataInicio()} className='botao-exclui-flag' >x</button>
                             </div> </>):
                             <><span className='flag-periodo-vazia'></span></>}
                             <span className=''>até</span> 
                             {dataFim?(<>
                         <div className='flag-periodo'>
-                            {inverteData(dataFim)}
+                            {inverteDataFim(dataFim)}
                             <button onClick={()=> removeFlagDataFim()} className='botao-exclui-flag' >x</button>
                             </div></>):
                             <><span className='flag-periodo-vazia'></span></>} 
