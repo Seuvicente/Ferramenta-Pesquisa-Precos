@@ -54,9 +54,9 @@ function Categorias() {
   }, [categoriaSelecionada, produtosSelecionados]);
 
   // Manipula a busca de produtos
-  const handleSearch = (termoBusca, categoria) => {
+  const handleSearch = (termoBusca) => {
     const produtosFiltrados = produtos.filter((produto) => {
-      if (categoria && produto.categoria !== categoria) {
+      if ( produto.categoria !== categoriaSelecionada) {
         return false;
       }
       return produto.nome.toLowerCase().includes(termoBusca.toLowerCase());

@@ -9,7 +9,6 @@ export default function CardProdutos(){
                     <p className='produtosText'>Produtos</p>
                     <div className="styleProduto">
                         <Categorias />
-                        
                     </div>
                 </div>
             </div>
