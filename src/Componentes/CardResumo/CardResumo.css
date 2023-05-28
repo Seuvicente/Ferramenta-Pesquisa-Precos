@@ -147,15 +147,14 @@
 }
 
 .botao-limpar-lojas{
-    margin-left: 284px;
+    margin-left: 20em;
     display: inline-block;
-    padding: 0 1rem;;
+    
 }
 
 .botao-limpar-produtos{
-    margin-left: 254px;
+    margin-left: 20em;
     display: inline-block;
-    padding: 0 1rem;;
 }
 
 .container-info-produtos{
