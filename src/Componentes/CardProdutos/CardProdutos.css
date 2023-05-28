@@ -1,34 +1,46 @@
-*{
-    background-color:#fff;
+* {
+    background-color: #fff;
 }
 
-.globalTelaProdutos{
+.globalTelaProdutos {
     margin-left: 1rem;
+    top:0;
+    height: 100%;
+    width: 60%;
 }
 
-.telaProdutos{
+.telaProdutos {
     display: flex;
     margin: auto;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-.styleProduto{
-    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.4);
-    border-top: #0054A6 solid 2px;
-    margin-top: 3px;
+.styleProduto {
+    box-shadow: 1px .8px .8px 1px rgba(0, 0, 0, 0.3);
+    border-top: 0.125rem solid #0054A6;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: #FFFFFF;
-    height: 480px;
-    width: 494px;
+    height: 92%;
+    width: 90%;
 }
-.produtosText{
-    margin: 0px;
+
+.produtosText {
+    margin: 0;
     color: #0054A6;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: var(--fonte-Titulos);
-
+    height: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.Container-Categoria{
+    height: 100%;
 }

@@ -1,22 +1,21 @@
-.CategoriasProdutos{
-    border-bottom: 1px #808080 solid;
+.CategoriasProdutos {
+
     align-items: center;
-    width: 450px;
-    height: 45px;
+    width: 23rem;
+    height: 3.5rem;
     display: flex;
-    margin: 5px 10px 5px 20px;
     justify-content: space-evenly;
+    margin-top: 0.2em;
 }
 
-.categoriasText{
-    margin-right: 10px;
+.categoriasText {
     color: #808080;
-    font-size: 16px;
+    font-size: 1.4rem;
     font-family: var(--fonte-Titulos);    
 }
 
-.setaCategorias{
-    margin-top: 4px;
+.setaCategorias {
+    margin-top: 0.4rem;
     border: none;
     outline: 0;
     color: #808080;
@@ -25,41 +24,40 @@
 
 /* PRODUTOS */
 
-.produtos{
+.produtos {
     align-items: center;
-    height: 305px;
+    height: 25rem;
+   
     overflow-y: auto;
     margin: 0 0.5rem;
-    font-family: var(--fonte-Textos);
-    
+    font-family: var(--fonte-Textos); 
 }
 
-.corp{
-    line-height: 17px;
-    padding: 5px;
-    font-size: 15px;
-    margin: 10px 5px 10px 5px;
+.corp {
+    line-height: 1.2rem;
+    padding: 1rem;
+    font-size: .9rem;
+    margin: 1rem 0.4rem;
     align-items: center;
     display: flex;
     background-color: rgba(217, 217, 217, 0.2);
-    justify-content: space-between;
-    width: 450px;
-    height: 50px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+    justify-content:space-between;
+    width: auto;
+    height: 3.7rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
    
 } 
-.corp:hover{
-    background-color:rgba(217, 217, 217, 0.500);
+.corp:hover {
+    background-color: rgba(217, 217, 217, 0.5);
 }
 
-.checkBox{
-    
-    margin-right: 10px;
+.checkBox {
+    margin-right: 1rem;
 }
 
 .produtos::-webkit-scrollbar {
-    width: 4px; 
+    width: 0.44rem; 
     
   }
   
@@ -70,7 +68,7 @@
   
 .produtos::-webkit-scrollbar-thumb {
     background-color: #0053a6cb; /* Cor do "polegar" da barra de rolagem */
-    border-radius: 5px;
+    border-radius: 0.5rem;
   }
   
 .produtos::-webkit-scrollbar-thumb:hover {

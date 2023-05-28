@@ -65,12 +65,9 @@ function Categorias() {
   };
 
   return (
-    <div>
+    <div className="Container-Cartegoria">
       <div className="CategoriasProdutos">
         {/* Componente de seleção de categorias */}
-        <label className="categoriasText" htmlFor="cars">
-          Categorias
-        </label>
         <select
           className="setaCategorias"
           name="cars"
@@ -78,7 +75,7 @@ function Categorias() {
           value={categoriaSelecionada}
           onChange={handleCategoriaChange}
         >
-          <option>Selecione</option>
+          <option>Categoria:</option>
           {/* Renderiza as opções de categorias */}
           {categoriasUnicas.map((categoria, index) => (
             <option key={index} value={categoria}>
@@ -86,9 +83,10 @@ function Categorias() {
             </option>
           ))}
         </select>
+        <LupaProdutos onSearch={handleSearch} />
       </div>
       {/* Componente de busca */}
-      <LupaProdutos onSearch={handleSearch} />
+      
       <div className="produtos">
         {produtosFiltradosPorCategoria.map((produto) => (
           <div className="corp" 
