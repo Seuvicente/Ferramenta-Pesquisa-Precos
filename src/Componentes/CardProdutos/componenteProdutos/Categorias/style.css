@@ -1,10 +1,8 @@
 .CategoriasProdutos {
-
     align-items: center;
-    width: 23rem;
     height: 3.5rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 0.2em;
 }
 
@@ -15,6 +13,7 @@
 }
 
 .setaCategorias {
+    font-size: 1rem;
     margin-top: 0.4rem;
     border: none;
     outline: 0;
@@ -27,9 +26,7 @@
 .produtos {
     align-items: center;
     height: 25rem;
-   
     overflow-y: auto;
-    margin: 0 0.5rem;
     font-family: var(--fonte-Textos); 
 }
 
@@ -37,13 +34,13 @@
     line-height: 1.2rem;
     padding: 1rem;
     font-size: .9rem;
-    margin: 1rem 0.4rem;
+     margin:0.8rem 1.5rem 0.4rem 1.3rem;
     align-items: center;
     display: flex;
     background-color: rgba(217, 217, 217, 0.2);
     justify-content:space-between;
     width: auto;
-    height: 3.7rem;
+    height: 3.3rem;
     border-radius: 1rem;
     box-shadow: 0px 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
    
@@ -68,7 +65,7 @@
   
 .produtos::-webkit-scrollbar-thumb {
     background-color: #0053a6cb; /* Cor do "polegar" da barra de rolagem */
-    border-radius: 0.5rem;
+    border-radius: 0.42rem;
   }
   
 .produtos::-webkit-scrollbar-thumb:hover {

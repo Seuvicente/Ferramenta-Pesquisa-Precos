@@ -75,7 +75,7 @@ function Categorias() {
           value={categoriaSelecionada}
           onChange={handleCategoriaChange}
         >
-          <option>Categoria:</option>
+          <option   className="setaCategorias" >Categoria:</option>
           {/* Renderiza as opções de categorias */}
           {categoriasUnicas.map((categoria, index) => (
             <option key={index} value={categoria}>
