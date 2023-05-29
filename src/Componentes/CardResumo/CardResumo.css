@@ -69,8 +69,8 @@
     text-align: center;
     justify-content: space-between;
     width: 30%;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     background-color: #D9D9D970;
     color: #0054A6;
     font-size: 1rem;
@@ -163,7 +163,7 @@
 }
 
 .botao-limpar-produtos{
-    margin-left: 20em;
+    margin-left: 17.9em;
     display: inline-block;
 }
 

@@ -7,9 +7,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0.5rem auto 1rem auto;
-  padding: 0.3rem 0rem;
+  padding: 0.3rem;
   gap: 0.2rem 0.2rem;
   overflow: scroll;
+  justify-content: space-evenly;
 }
 
 .item-loja {
