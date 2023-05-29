@@ -16,9 +16,10 @@
     }
 
     .container-input-titulo-pesquisa{
-        margin-left: 4.6rem;
+        margin-left: 4.5rem;
         font-weight: bold;
         height: 6%;
+        width: 20rem;
         border: none;
         color: #0054A6;
         display: flex;
@@ -28,4 +29,7 @@
         font-family: var(--fonte-Titulos);
         display: flex;
         align-self: end;
+        border: 0.09375rem solid #808080;
+        border-radius: 1rem;
+        padding: 0.5rem;
     }

@@ -30,6 +30,14 @@ export function ContextoProvider({ children }) {
       respostas: [],
     };
 
+    const camposVazio = []
+
+    for (const chave in pesquisa){
+      if(pesquisa.hasOwnProperty(chave) && pesquisa[chave] == "" ){
+        camposVazio.push(chave)
+        console.log(camposVazio)
+      }
+    }
 
   return (
     <ResumoContexto.Provider
