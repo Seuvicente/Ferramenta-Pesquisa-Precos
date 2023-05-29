@@ -19,6 +19,8 @@ export function ContextoProvider({ children }) {
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =useState([]);
   const [erroData, setDataErro] = useState("")
   const [tituloPesquisa,setTituloPesquisa]= useState("")
+  const [modal, setModal] = useState(false);
+  const [modalProdutos, setModalProdutos] = useState(false);
 
     const pesquisa = {
       titulo: tituloPesquisa,
@@ -33,6 +35,10 @@ export function ContextoProvider({ children }) {
   return (
     <ResumoContexto.Provider
       value={{
+        modalProdutos, 
+        setModalProdutos,
+        modal,
+        setModal,
         tituloPesquisa,
         setTituloPesquisa,
         pesquisa,

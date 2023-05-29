@@ -24,7 +24,7 @@ export default function CardProdutosResumo(){
        
         <div  className="cardProdutoResumo">
             {produtosSelecionadosArray ? produtosSelecionadosArray.map((produto)=>( 
-                <div className='card-flag-resumo' key={produto}>
+                <div className='card-flag-resumo' key={produto.id}>
                     <span title={produto.nome}  className='item-produto'>{produto.nome}</span>
                     <button onClick={()=>removeFlag(produto.id)} className='botao-remove-flag-resumo-loja' >X</button>
                 </div>

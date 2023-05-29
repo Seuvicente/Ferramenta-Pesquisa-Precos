@@ -3,7 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+   
 }
 
 .container-cabecalho{
@@ -142,7 +142,7 @@
 
 .container-info-lojas{
     width:100%;
-    height: 35%;
+
     text-align: start;
 }
 
@@ -153,23 +153,42 @@
     font-weight: 500;
     line-height: 24px;
     color: #000000;
-    display: inline-block;
+    display: inline;
 }
 
 .botao-limpar-lojas{
-    margin-left: 20em;
+    margin-left: 17em;
     display: inline-block;
+    width: 1.3em;
+   
     
+
+}
+
+.btnabreModal{
+    width: 7em;
+    height: 2em;
+    background-color: #0054A6;
+}
+
+.modalLoja{
+    width: 100%;
+    height: 100vh;
+    background-color: #0000004b;
+    z-index: 1;
+    position: absolute;
+    filter: blur();
 }
 
 .botao-limpar-produtos{
-    margin-left: 17.9em;
-    display: inline-block;
+    margin-left: 15em;
+  
+    width: 1.3em;
 }
 
 .container-info-produtos{
     width: 100%;
-    height: 50%;
+    height: 10rem;
     text-align: start;
     margin-top: 2rem;
     
