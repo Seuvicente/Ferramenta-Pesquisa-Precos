@@ -67,6 +67,17 @@
   margin-bottom: 2em;
 }
 
+.modalLoja{
+  width: 100%;
+  height: 100vh;
+  background-color: #0000004b;
+  display: flex;
+  align-items:center ;
+  justify-content: center;  
+
+  filter: 29px blur();
+}
+
 .cards-montagem {
   display: flex;
   flex-direction: row;
