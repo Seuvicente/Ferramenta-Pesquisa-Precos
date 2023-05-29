@@ -1,13 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { ResumoContexto } from "../../Contexto/Contexto";
 import "./CardLojaResumo.css";
 
 export default function CardLojaResumo() {
-  const { listaLojas, setListaLojas } = useContext(ResumoContexto);
+  const { listaLojas, setListaLojas ,setListaIdLojasSelecionadas,} = useContext(ResumoContexto);
   
 
   const removeFlag = (e) => {
     setListaLojas(listaLojas.filter((x) => x != e));
+    setListaIdLojasSelecionadas([''])
   };
 
  

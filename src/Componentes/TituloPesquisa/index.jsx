@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './TituloPesquisa.css'
 import { useContext } from 'react'
 import { ResumoContexto } from '../../Contexto/Contexto';

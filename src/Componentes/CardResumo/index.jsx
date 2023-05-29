@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ResumoContexto } from "../../Contexto/Contexto.jsx";
 import BotaoEnviarPesquisa from "../BotaoEnviarPesquisa";
 import icon from "../../assets/icon.svg";
-import { useState } from "react";
+
 
 export default function CardResumo() {
   const {
@@ -15,8 +15,7 @@ export default function CardResumo() {
     setProdutosSelecionados,
     setProdutosSelecionadosArray,
     setCategoriaSelecionada,
-    produtosSelecionados,
-    listaLojas,
+    
     setListaLojas,
     setListaIdLojasSelecionadas,
     dataInicio,
@@ -27,10 +26,9 @@ export default function CardResumo() {
     dataFimISO,
     setDataInicio,
     setDataFim,
-    erroData,
+    
     setDataErro,
-    setModal,
-    setModalProdutos
+    
   } = useContext(ResumoContexto);
 
 
@@ -49,16 +47,6 @@ export default function CardResumo() {
     setDataFim("");
   }
 
-  const modalAbrir = () => {
-    if(listaLojas.length > 8){
-      setModal(true)
-    } 
-  }
-  const modalAbrirProdutos = ()=>{
-    if(produtosSelecionados.length > 6){
-        setModalProdutos(true)
-    }
-  }
 
   function inverteDataInicio(data) {
     const partes = data.split("-");
@@ -119,12 +107,11 @@ export default function CardResumo() {
       </div>
       <div className="container-infos">
         <div className="container-info-topo">
-          <h2
+          <div
             className="titulo-flag-resumo-titulo"
-            placeholder="Título da Pesquisa"
-          >
-            {tituloPesquisa ? tituloPesquisa : `Título Pesquisa`}
-          </h2>
+          > Título pesquisa:
+          <h2 className="container-titulo-titulo-pesquisa">{tituloPesquisa}</h2>
+          </div>
           <h2 className="titulo-flag-resumo">
             Período:
             {dataInicio ? (
@@ -192,7 +179,7 @@ export default function CardResumo() {
               className="botao-limpar-lojas"
               onClick={() => limpaCampoLoja()}
             />
-            <CardLojaResumo /><button className="btnabreModal" onClick={() => modalAbrir()}>MODALLOJAS</button>
+            <CardLojaResumo />
           </div>
           <div className="container-info-produtos">
             <h2 className="titulo-loja-resumo">Produtos</h2>
@@ -202,7 +189,7 @@ export default function CardResumo() {
               onClick={() => limpaCampoProduto()}
             />
             <CardProdutosResumo />
-            <button className="btnabreModal" onClick={() => modalAbrirProdutos()}>MODALPROD</button>
+          
           </div>
         </div>
         <BotaoEnviarPesquisa />
