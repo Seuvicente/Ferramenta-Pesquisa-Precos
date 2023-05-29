@@ -49,16 +49,6 @@ export default function CardResumo() {
     setDataFim("");
   }
 
-  const modalAbrir = () => {
-    if(listaLojas.length > 8){
-      setModal(true)
-    } 
-  }
-  const modalAbrirProdutos = ()=>{
-    if(produtosSelecionados.length > 6){
-        setModalProdutos(true)
-    }
-  }
 
   function inverteDataInicio(data) {
     const partes = data.split("-");
@@ -192,7 +182,7 @@ export default function CardResumo() {
               className="botao-limpar-lojas"
               onClick={() => limpaCampoLoja()}
             />
-            <CardLojaResumo /><button className="btnabreModal" onClick={() => modalAbrir()}>MODALLOJAS</button>
+            <CardLojaResumo />
           </div>
           <div className="container-info-produtos">
             <h2 className="titulo-loja-resumo">Produtos</h2>
@@ -202,7 +192,7 @@ export default function CardResumo() {
               onClick={() => limpaCampoProduto()}
             />
             <CardProdutosResumo />
-            <button className="btnabreModal" onClick={() => modalAbrirProdutos()}>MODALPROD</button>
+          
           </div>
         </div>
         <BotaoEnviarPesquisa />
