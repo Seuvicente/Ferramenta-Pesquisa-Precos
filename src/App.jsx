@@ -5,7 +5,7 @@ import CardProdutos from "./Componentes/CardProdutos";
 import CardResumo from "./Componentes/CardResumo";
 import TituloPesquisa from "./Componentes/TituloPesquisa";
 import imagem1 from "./img/logo.png";
-import { createContext, useContext } from "react";
+import {  useContext } from "react";
 import { ResumoContexto } from "./Contexto/Contexto";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
             <div>
               <div onClick={() => fechar()}>x</div>
               {listaLojas.map((x) => (
-                <div>
+                <div key={x}>
                   {x}
                   <button
                     onClick={() => removeFlag(x)}
@@ -66,7 +66,7 @@ function App() {
             <div>
               <div onClick={() => fechar()}>x</div>
               {produtosSelecionadosArray.map((x) => (
-                <div>
+                <div key={x}>
                   {x.nome}
                   <button
                     onClick={() => removeFlagProdutos(x)}
