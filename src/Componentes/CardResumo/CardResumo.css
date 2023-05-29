@@ -160,9 +160,7 @@
     margin-left: 17em;
     display: inline-block;
     width: 1.3em;
-   
-    
-
+    color:#ED1C24;
 }
 
 .btnabreModal{
@@ -182,7 +180,7 @@
 
 .botao-limpar-produtos{
     margin-left: 15em;
-  
+    color:#FF0000;
     width: 1.3em;
 }
 

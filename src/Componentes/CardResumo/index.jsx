@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ResumoContexto } from "../../Contexto/Contexto.jsx";
 import BotaoEnviarPesquisa from "../BotaoEnviarPesquisa";
 import icon from "../../assets/icon.svg";
+import {BsFillTrashFill} from 'react-icons/bs'
 
 
 export default function CardResumo() {
@@ -185,8 +186,7 @@ export default function CardResumo() {
           <div className="container-info-lojas">
             <h2 className="titulo-loja-resumo">Lojas</h2>
 
-            <img
-              src={icon}
+            <BsFillTrashFill
               className="botao-limpar-lojas"
               onClick={() => limpaCampoLoja()}
             />
@@ -194,8 +194,7 @@ export default function CardResumo() {
           </div>
           <div className="container-info-produtos">
             <h2 className="titulo-loja-resumo">Produtos</h2>
-            <img
-              src={icon}
+            <BsFillTrashFill
               className="botao-limpar-produtos"
               onClick={() => limpaCampoProduto()}
             />

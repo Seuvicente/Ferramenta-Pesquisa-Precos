@@ -25,6 +25,7 @@ export default function BotaoEnviarPesquisa() {
 
   const [pesquisaEnviada, setPesquisaEnviada] = useState(true);
   const [isLoading, setLoading] = useState(false);
+  const [notificacaoErro,setNotificacaoErro] = useState("")
 
   const estadosFinais = {
     titulo: tituloPesquisa,
@@ -53,10 +54,13 @@ export default function BotaoEnviarPesquisa() {
   function validaCampos() {
     for (var chave in estadosFinais) {
       if (estadosFinais[chave] === "" || estadosFinais[chave].length === 0) {
-        alert(`Campo ${chave} é obrigatório`);
+        alert(`Campo ${chave} é obrigatório`); 
+
         return;
       }
     }
+    
+    setNotificacaoErro("")
 
     setLoading(true);
 
@@ -99,13 +103,15 @@ export default function BotaoEnviarPesquisa() {
   return (
     <>
       {pesquisaEnviada ? (
-        <button
+       <>
+       <button
           className="botao-enviar-pesquisa"
           onClick={() => validaCampos()}
           disabled={isLoading}
         >
           {isLoading ? "Enviando..." : "Enviar"}
         </button>
+        </>
       ) : (
         <button className="botao-enviar-pesquisa-enviada">
         Pesquisa enviada <FcCheckmark className="check-icon"/>
