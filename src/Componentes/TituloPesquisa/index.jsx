@@ -18,7 +18,7 @@ export default function TituloPesquisa(){
         {/* <h1 className='container-titulo-titulo-pesquisa'>{tituloPesquisa ? tituloPesquisa : `Título da pesquisa`}</h1> */}
         <input 
         className='container-input-titulo-pesquisa' 
-        placeholder='Digite o título da pesquisa.' 
+        placeholder='Digite o título da pesquisa' 
         maxLength={30}
         value={tituloPesquisa}
         onChange={(e)=> setTituloPesquisa(e.target.value)}
