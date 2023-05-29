@@ -26,6 +26,7 @@ export default function BotaoEnviarPesquisa() {
   const [pesquisaEnviada, setPesquisaEnviada] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [notificacaoErro,setNotificacaoErro] = useState("")
+  const [mostrarErro, setMostrarErro] = useState(false);
 
   const estadosFinais = {
     titulo: tituloPesquisa,
@@ -35,6 +36,7 @@ export default function BotaoEnviarPesquisa() {
     categoria: categoriaSelecionada,
     produtos: produtosSelecionadosArray,
   };
+
 
   useEffect(() => {
     if (!pesquisaEnviada) {
@@ -51,20 +53,38 @@ export default function BotaoEnviarPesquisa() {
     }
   }, [pesquisaEnviada]);
 
-  function validaCampos() {
-    for (var chave in estadosFinais) {
-      if (estadosFinais[chave] === "" || estadosFinais[chave].length === 0) {
-        alert(`Campo ${chave} é obrigatório`); 
 
+  function validaCampos() {
+    
+
+    for (var chave in estadosFinais) {
+      
+      if (estadosFinais[chave] === "" || estadosFinais[chave].length === 0) {
+        if([chave] == "titulo" ){
+          setNotificacaoErro(`O campo título é obrigatório!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }if([chave] == "lojas"){
+          setNotificacaoErro(`O campo lojas é obrigatório!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }if([chave] == "inicio"){
+          setNotificacaoErro(`A data inicio é obrigatória!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }if([chave] == "final"){
+          setNotificacaoErro(`A data final  é obrigatória!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }if([chave] == "categoria"){
+          setNotificacaoErro(`O campo categoria é obrigatório!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }if([chave] == "produtos"){
+          setNotificacaoErro(`O campo produtos é obrigatório!`)
+          setTimeout(()=>setNotificacaoErro(""),1500)
+        }
         return;
       }
     }
-    
+
     setNotificacaoErro("")
-
     setLoading(true);
-
-    
     setTimeout(() => {
       enviarPesquisa();
       setLoading(false);
@@ -72,7 +92,7 @@ export default function BotaoEnviarPesquisa() {
   }
 
   function enviarPesquisa() {
-    fetch("https://pmenosapi-production-efe6.up.railway.app/Pesquisa/cadastro", {
+    fetch("https://pmenosapi-production-efe6.up.railway.app/Agile/Cadastrar/Pesquisa", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,6 +124,7 @@ export default function BotaoEnviarPesquisa() {
     <>
       {pesquisaEnviada ? (
        <>
+       <span className="notificacao-erro">{notificacaoErro}</span>
        <button
           className="botao-enviar-pesquisa"
           onClick={() => validaCampos()}

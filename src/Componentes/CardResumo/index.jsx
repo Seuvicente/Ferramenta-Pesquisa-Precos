@@ -17,7 +17,6 @@ export default function CardResumo() {
     setProdutosSelecionados,
     setProdutosSelecionadosArray,
     setCategoriaSelecionada,
-    
     setListaLojas,
     setListaIdLojasSelecionadas,
     dataInicio,
@@ -28,10 +27,12 @@ export default function CardResumo() {
     dataFimISO,
     setDataInicio,
     setDataFim,
-    
     setDataErro,
     
   } = useContext(ResumoContexto);
+
+
+
 
 
 
@@ -43,10 +44,12 @@ export default function CardResumo() {
 
   function removeFlagDataInicio() {
     setDataInicio("");
+    setDataInicioISO("")
   }
 
   function removeFlagDataFim() {
     setDataFim("");
+    setDataFimISO("")
   }
 
 
@@ -62,12 +65,11 @@ export default function CardResumo() {
   function formataDataInicio(data) {
     const dataFormatada = `${data}T12:00:00`;
     setDataInicioISO(dataFormatada);
-    console.log(dataInicioISO);
+   
     return dataFormatada;
   }
 
-  // const dataIniNum = Num(dataInicio)
-  // const dataFimNum = Num(dataFim)
+  
 
   function inverteDataFim(data) {
     if (dataFim > dataInicio) {
@@ -87,7 +89,6 @@ export default function CardResumo() {
   function formataDataFim(data) {
     const dataFormatada = `${data}T23:59:00`;
     setDataFimISO(dataFormatada);
-    console.log(dataFimISO);
     return dataFormatada;
   }
 
