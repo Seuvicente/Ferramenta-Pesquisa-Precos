@@ -3,6 +3,7 @@ import './App.css'
 import CardLojas from './Componentes/CardLojas'
 import CardProdutos from './Componentes/CardProdutos'
 import CardResumo from './Componentes/CardResumo'
+import TituloPesquisa from './Componentes/TituloPesquisa'
 import imagem1 from './img/logo.png'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <section className='container'>
         <div className='container-montagem'>
              <div className="selecao-periodo">
+                <TituloPesquisa/>
                <SeletorPeriodo/>
              </div>
              <div className="cards-montagem">

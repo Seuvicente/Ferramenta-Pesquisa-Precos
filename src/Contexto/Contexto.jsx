@@ -18,8 +18,10 @@ export function ContextoProvider({ children }) {
   const [excluiListaGlobal, setExcluiListaGlobal] = useState([]);
   const [produtosFiltradosPorCategoria, setProdutosFiltradosPorCategoria] =useState([]);
   const [erroData, setDataErro] = useState("")
+  const [tituloPesquisa,setTituloPesquisa]= useState("")
 
     const pesquisa = {
+      titulo: tituloPesquisa,
       lojas: listaIdLojasSelecionadas,
       dateIni: dataInicioISO,
       dateFin: dataFimISO,
@@ -32,6 +34,8 @@ export function ContextoProvider({ children }) {
   return (
     <ResumoContexto.Provider
       value={{
+        tituloPesquisa,
+        setTituloPesquisa,
         pesquisa,
         excluiListaGlobal,
         setExcluiListaGlobal,

@@ -7,8 +7,10 @@ import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 import BotaoEnviarPesquisa from '../BotaoEnviarPesquisa'
 import { useState } from 'react'
 
+
 export default function CardResumo(){
     const {
+        tituloPesquisa,
         categoriaSelecionada,
         setProdutosSelecionados,
         setProdutosSelecionadosArray,
@@ -106,6 +108,7 @@ export default function CardResumo(){
             </div>
             <div className="container-infos">
                 <div className="container-info-topo">
+                   <h2 className='titulo-flag-resumo-titulo' placeholder='Título da Pesquisa'>{tituloPesquisa ? tituloPesquisa: `Título Pesquisa`}</h2>
                    <h2 className='titulo-flag-resumo'>Período:{dataInicio?(<>
                         <div className='flag-periodo'>
                             {inverteDataInicio(dataInicio)}

@@ -13,7 +13,7 @@ export default function BotaoEnviarPesquisa() {
 
   
   function enviarPesquisa() {
-    
+    console.log(pesquisa)
     fetch('https://pmenosapi-production-efe6.up.railway.app/Pesquisa/cadastro', {
         method: 'POST',
         headers: {

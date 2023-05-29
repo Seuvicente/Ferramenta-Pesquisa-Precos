@@ -54,6 +54,16 @@
     font-size: 1.2rem;
     line-height: 19px;
 }
+.titulo-flag-resumo-titulo{
+    display:flex;
+    margin-bottom: 1.2rem;
+    color: #0054A6;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 19px;
+}
 .flag-periodo{
     display: flex;
     text-align: center;
