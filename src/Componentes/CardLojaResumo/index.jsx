@@ -8,7 +8,7 @@ export default function CardLojaResumo() {
 
   const removeFlag = (e) => {
     setListaLojas(listaLojas.filter((x) => x != e));
-    setListaIdLojasSelecionadas([''])
+    setListaIdLojasSelecionadas([])
   };
 
  

@@ -115,6 +115,7 @@ export default function CardLojas() {
             <ul className="lista-menu">
               {array.map((x) => (
                 <button
+                  key={x}
                   className="buttonLetras"
                   onClick={() => mostraMenuAaz(x)}
                 >

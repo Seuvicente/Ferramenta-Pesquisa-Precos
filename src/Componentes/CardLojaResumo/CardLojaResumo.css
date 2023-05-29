@@ -23,10 +23,10 @@
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 700;
- 
   height: 0.2rem;
   margin-left: 0.4rem;
   padding: 1rem;
+  width: 45%;
 }
 
 .item-loja:hover {

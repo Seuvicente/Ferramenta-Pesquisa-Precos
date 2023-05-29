@@ -9,7 +9,7 @@
 .container-cabecalho{
     display: flex;
     justify-content: space-between;
-    margin: 1.5rem 1.5rem 1rem 1.5rem;
+    margin: 1rem 1.5rem 1rem 1rem;
     border-bottom: 4px solid #0054A6;
     padding-bottom: .3rem;
 }
@@ -46,7 +46,7 @@
 }
 .titulo-flag-resumo{
     display:flex;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
     color:#808080;
     font-family: 'Inter',sans-serif;
     font-style: normal;
@@ -55,9 +55,9 @@
     line-height: 19px;
 }
 .titulo-flag-resumo-titulo{
-    display:flex;
-    margin-bottom: 1.2rem;
-    color: #0054A6;
+    display: flex;
+    margin-bottom: 1.05rem;
+    color: #808080;
     font-family: 'Inter',sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -67,13 +67,13 @@
 .flag-periodo{
     display: flex;
     text-align: center;
-    justify-content: space-between;
-    width: 30%;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    justify-content: space-around;
+    width: auto;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
     background-color: #D9D9D970;
     color: #0054A6;
-    font-size: 1rem;
+    font-size: .9rem;
     padding: 0px 5px;
     font-family: 'Roboto';
     align-items: center;
@@ -93,17 +93,17 @@
 }
 
 .flag-categoria{
-    background-color:#D9D9D970;
-    color:#0054A6;
+    align-items: center;
+    background-color: #D9D9D970;
+    color: #0054A6;
     width: 40%;
     display: flex;
     justify-content: space-between;
-    padding: 2px 5px;
+    padding: 1px 4px;
     font-size: 1rem;
     font-family: 'Roboto';
     font-style: normal;
     color: #0054A6;
-    line-height: 19px;
     margin-left: 1rem;
 }
 

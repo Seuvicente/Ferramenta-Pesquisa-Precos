@@ -42,7 +42,7 @@ export default function BotaoEnviarPesquisa() {
       const timer = setTimeout(() => {
         setLoading(false);
         setPesquisaEnviada(true);
-      }, 1500);
+      }, 2500);
 
       return () => {
         clearTimeout(timer);

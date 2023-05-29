@@ -11,6 +11,7 @@ import icon from "../../assets/icon.svg";
 export default function CardResumo() {
   const {
     tituloPesquisa,
+    setTituloPesquisa,
     categoriaSelecionada,
     setProdutosSelecionados,
     setProdutosSelecionadosArray,
@@ -89,6 +90,10 @@ export default function CardResumo() {
     return dataFormatada;
   }
 
+  function removeFlagTituloResumo(){
+    setTituloPesquisa("")
+  }
+
   function limpaCampoProduto() {
     setProdutosSelecionados([]);
     setProdutosSelecionadosArray([]);
@@ -109,8 +114,14 @@ export default function CardResumo() {
         <div className="container-info-topo">
           <div
             className="titulo-flag-resumo-titulo"
-          > Título pesquisa:
-          <h2 className="container-titulo-titulo-pesquisa">{tituloPesquisa}</h2>
+          > Título pesquisa:{tituloPesquisa ?<><h2 className="container-titulo-titulo-pesquisa">{tituloPesquisa}</h2>
+                <button
+                    onClick={() => removeFlagTituloResumo()}
+                    className="botao-exclui-flag"
+                  >
+                    x
+                  </button></>:<></>}
+          
           </div>
           <h2 className="titulo-flag-resumo">
             Período:
