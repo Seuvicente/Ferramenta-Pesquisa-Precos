@@ -6,14 +6,37 @@ import { ResumoContexto } from "../../Contexto/Contexto";
 export default function BotaoEnviarPesquisa() {
   
     const {
-    pesquisa
+    pesquisa,
+    tituloPesquisa,
+    listaIdLojasSelecionadas,
+    dataFimISO,
+    categoriaSelecionada,
+    produtosSelecionadosArray,
+    dataInicioISO,
   } = useContext(ResumoContexto);
 
-  
-
-  
+  const estadosFinais = {
+    titulo:tituloPesquisa,
+    lojas:listaIdLojasSelecionadas,
+    inicio:dataInicioISO,
+    final:dataFimISO,
+    categoria:categoriaSelecionada,
+    produtos:produtosSelecionadosArray,
+  }
+    
+  function validaCampos() {
+    for (var chave in estadosFinais) {
+      if (estadosFinais[chave] == "" || estadosFinais[chave] == []) {
+        alert(`Campo ${chave} é obrigatório`);
+        return; 
+      }
+    }
+    enviarPesquisa();
+  }
+   
+      
   function enviarPesquisa() {
-    console.log(pesquisa)
+
     fetch('https://pmenosapi-production-efe6.up.railway.app/Pesquisa/cadastro', {
         method: 'POST',
         headers: {
@@ -33,9 +56,8 @@ export default function BotaoEnviarPesquisa() {
 
 
   return (
-    <button className="botao-enviar-pesquisa" onClick={() => enviarPesquisa()}>
+    <button className="botao-enviar-pesquisa" onClick={() => validaCampos()}>
       Enviar
     </button>
   );
-
 }

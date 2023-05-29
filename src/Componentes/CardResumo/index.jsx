@@ -5,8 +5,6 @@ import CardProdutosResumo from '../CardProdutoResumo'
 import { useContext } from 'react'
 import { ResumoContexto } from '../../Contexto/Contexto.jsx'
 import BotaoEnviarPesquisa from '../BotaoEnviarPesquisa'
-import { useState } from 'react'
-
 
 export default function CardResumo(){
     const {
@@ -20,17 +18,12 @@ export default function CardResumo(){
         dataInicio,
         dataFim,
         setDataInicioISO,
-        dataInicioISO,
         setDataFimISO,
-        dataFimISO,
         setDataInicio,
-        setDataFim,
-        erroData, 
+        setDataFim, 
         setDataErro,
       } = useContext(ResumoContexto);
-
-      
-
+    
     function removeFlagCategoria(){
         setCategoriaSelecionada("") 
         setProdutosSelecionados([])
@@ -57,13 +50,8 @@ export default function CardResumo(){
     function formataDataInicio(data){
         const dataFormatada = `${data}T12:00:00`
         setDataInicioISO(dataFormatada)
-        console.log(dataInicioISO)
         return dataFormatada
     }
-
-    // const dataIniNum = Num(dataInicio)
-    // const dataFimNum = Num(dataFim)
-
 
     function inverteDataFim(data){
         if(dataFim > dataInicio){
@@ -83,11 +71,9 @@ export default function CardResumo(){
     function formataDataFim(data){
         const dataFormatada = `${data}T23:59:00`
         setDataFimISO(dataFormatada)
-        console.log(dataFimISO)
         return dataFormatada;
     }
     
-
     function limpaCampoProduto(){
         setProdutosSelecionados([])
         setProdutosSelecionadosArray([])
@@ -97,9 +83,7 @@ export default function CardResumo(){
         setListaLojas([])
         setListaIdLojasSelecionadas([])
     }
-    
-    
-
+ 
     return(
         <div className="container-principal">
             <div className="container-cabecalho">

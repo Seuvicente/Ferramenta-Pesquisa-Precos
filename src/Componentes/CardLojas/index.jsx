@@ -19,7 +19,7 @@ export default function CardLojas() {
     : loja1.nomeFilial < loja2.nomeFilial
     ? -1
     : 0
-);;
+);
 
   const {
     listaLojas,

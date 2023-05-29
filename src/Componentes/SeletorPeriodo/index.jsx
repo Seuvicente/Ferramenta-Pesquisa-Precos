@@ -3,7 +3,7 @@ import { ResumoContexto } from "../../Contexto/Contexto";
 import "./SeletorPeriodo.css";
 
 export default function SeletorPeriodo() {
-  const { dataInicio, setDataInicio, dataFim, setDataFim, erroData } =
+  const { dataInicio, setDataInicio, dataFim, setDataFim } =
     useContext(ResumoContexto);
   const data = new Date();
 //   const partes = data.split(" ");
