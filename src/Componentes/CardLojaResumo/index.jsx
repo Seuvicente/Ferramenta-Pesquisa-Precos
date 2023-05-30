@@ -1,10 +1,20 @@
-import { useContext} from "react";
+import { useContext, useRef, useEffect} from "react";
 import { ResumoContexto } from "../../Contexto/Contexto";
 import "./CardLojaResumo.css";
 
 export default function CardLojaResumo() {
   const { listaLojas, setListaLojas ,setListaIdLojasSelecionadas,} = useContext(ResumoContexto);
+  const scrollViewRef = useRef(null);
   
+  const scroll = () => {
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollTop = scrollViewRef.current.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    scroll();
+  }, [listaLojas]);
 
   const removeFlag = (e) => {
     setListaLojas(listaLojas.filter((x) => x != e));
@@ -22,7 +32,7 @@ export default function CardLojaResumo() {
   }
 
   return (
-    <div className="cardlojaresumo">
+    <div className="cardlojaresumo" ref={scrollViewRef}>
       {listaLojas ? (
         listaLojas.map((loja) => (
           <>
