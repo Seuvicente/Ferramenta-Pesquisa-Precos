@@ -1,26 +1,14 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ResumoContexto } from "../../Contexto/Contexto";
 import lojas from "../../../lojas.json";
 import { SlMagnifier } from "react-icons/sl";
 import "./CardLojas.css";
-import { useEffect } from "react";
 
 export default function CardLojas() {
   const [busca, setBusca] = useState("");
-  const [mostraArray, setMostraArray] = useState([]);
   const lowerBusca = busca.toLowerCase();
-  const lojasFiltradas = lojas.filter((loja) =>
-    loja.nomeFilial.toLocaleLowerCase().includes(lowerBusca)
-  );
-  const lojasFiltradasOrganizadas = lojasFiltradas.sort((loja1, loja2) =>
-  loja1.nomeFilial > loja2.nomeFilial
-    ? 1
-    : loja1.nomeFilial < loja2.nomeFilial
-    ? -1
-    : 0
-);
-
+  const [lojasFiltradasOrganizadas, setLojasFiltradasOrganizadas] =useState([]) 
+  
   const {
     listaLojas,
     setListaLojas,
@@ -29,18 +17,18 @@ export default function CardLojas() {
   } = useContext(ResumoContexto);
 
   useEffect(() => {
-    mostraArray.length > 0
-      ? setMostraArray(
-          mostraArray.sort((loja1, loja2) =>
-            loja1.nomeFilial > loja2.nomeFilial
-              ? 1
-              : loja1.nomeFilial < loja2.nomeFilial
-              ? -1
-              : 0
-          )
-        )
-      : setMostraArray(lojasFiltradasOrganizadas);
-  });
+    const lojasFiltradas = lojas.filter((loja) =>
+      loja.nomeFilial.toLowerCase().includes(lowerBusca)
+    );
+
+    const lojasFiltradasOrganizadas = lojasFiltradas.sort((loja1, loja2) =>
+      loja1.nomeFilial > loja2.nomeFilial ? 1 : loja1.nomeFilial < loja2.nomeFilial ? -1 : 0
+    );
+
+    setListaLojas([]);
+    setListaIdLojasSelecionadas([]);
+    setLojasFiltradasOrganizadas(lojasFiltradasOrganizadas);
+  }, [busca]);
 
   const array = [
     "A",
@@ -70,25 +58,20 @@ export default function CardLojas() {
   ];
 
   const mostraMenuAaz = (letra) => {
-    setMostraArray(
-      mostraArray.filter(
-        (loja) => loja.nomeFilial.charAt(0).toLocaleUpperCase() === letra
-      )
+    const lojasFiltradasPorLetra = lojas.filter(
+      (loja) => loja.nomeFilial.charAt(0).toLocaleUpperCase() === letra
     );
-
-    // selecionaGlossario.map(element => {
-    //   handleCheckboxClick(element)
-    // });
+    const lojasFiltradasOrganizadas = lojasFiltradasPorLetra.sort((loja1, loja2) =>
+      loja1.nomeFilial > loja2.nomeFilial ? 1 : loja1.nomeFilial < loja2.nomeFilial ? -1 : 0
+    );
+    setLojasFiltradasOrganizadas(lojasFiltradasOrganizadas);
   };
 
   const handleCheckboxClick = (loja) => {
-    // checkbox;
-
     if (listaLojas.includes(loja.nomeFilial)) {
       setListaLojas(listaLojas.filter((x) => x !== loja.nomeFilial));
-
       setListaIdLojasSelecionadas(
-        listaIdLojasSelecionadas.filter((x) => x != loja.codigo)
+        listaIdLojasSelecionadas.filter((x) => x !== loja.codigo)
       );
     } else {
       setListaLojas([...listaLojas, loja.nomeFilial]);
@@ -127,7 +110,7 @@ export default function CardLojas() {
 
           <div className="caixa">
             <div className="lista-lojas">
-              {mostraArray.map((loja) => (
+              {lojasFiltradasOrganizadas.map((loja) => (
                 <div
                   className="lista-lojas__item"
                   key={loja.codigo}
