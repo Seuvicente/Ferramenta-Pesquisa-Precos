@@ -29,11 +29,12 @@
 
 .cabecalho {
   background-color: var(--CorPrincipal);
-  height: 7%;
+  height: 5%;
   display: flex;
   align-items: center;
   color: var(--CorSecundaria);
   font-size: 2em;
+  padding: .8em;
 }
 
 .cabecalho-titulo {
@@ -43,15 +44,18 @@
 .container {
   background-color: var(--CorDeFundo);
   width: auto;
-  height: 92%;
+  height: 90%;
   display: flex;
   justify-content: space-around;
 }
 
 .container-montagem {
   width: 70%;
+  height: 92%;
+  margin: 1.4em;
   background-color: var(--CorSecundaria);
-  margin: .3em;
+  text-align: center;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +68,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: .5em;
 }
 
 .modalLoja{
@@ -92,7 +95,9 @@
 .container-resumo {
   width: 30%;
   background-color: #fff;
-
+  height: 99,2%;
+  margin-left: .2em;
+  margin-right: .6em;
   text-align: center;
-  margin: .3em;
+ 
 }

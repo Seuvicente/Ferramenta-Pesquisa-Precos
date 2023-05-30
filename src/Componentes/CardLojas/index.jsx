@@ -116,7 +116,7 @@ export default function CardLojas() {
                   key={loja.codigo}
                   onClick={() => handleCheckboxClick(loja)}
                 >
-                  {loja.nomeFilial}
+                 {loja.codigo} - {loja.nomeFilial}
                   <input
                     type="checkbox"
                     className="lista-lojas__checkbox"
