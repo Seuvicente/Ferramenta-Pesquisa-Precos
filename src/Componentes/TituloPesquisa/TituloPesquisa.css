@@ -5,8 +5,10 @@
     }
 
     .container-titulo-titulo-pesquisa{
-         background-color: #d9d9d970;
+        background-color: #d9d9d970;
         margin-left: 0.5rem;
+        display: flex;
+        justify-content: space-between;
         color: #0054A6;
         font-size: 1rem;
         font-family: var(--fonte-Titulos);

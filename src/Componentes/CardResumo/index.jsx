@@ -31,11 +31,6 @@ export default function CardResumo() {
     
   } = useContext(ResumoContexto);
 
-
-
-
-
-
   function removeFlagCategoria() {
     setCategoriaSelecionada("");
     setProdutosSelecionados([]);
@@ -52,7 +47,6 @@ export default function CardResumo() {
     setDataFimISO("")
   }
 
-
   function inverteDataInicio(data) {
     const partes = data.split("-");
     const ano = partes[0];
@@ -62,6 +56,7 @@ export default function CardResumo() {
     formataDataInicio(data);
     return dataInvertida;
   }
+
   function formataDataInicio(data) {
     const dataFormatada = `${data}T12:00:00`;
     setDataInicioISO(dataFormatada);
@@ -69,7 +64,6 @@ export default function CardResumo() {
     return dataFormatada;
   }
 
-  
 
   function inverteDataFim(data) {
     if (dataFim > dataInicio) {
@@ -116,13 +110,13 @@ export default function CardResumo() {
         <div className="container-info-topo">
           <div
             className="titulo-flag-resumo-titulo"
-          > Título pesquisa:{tituloPesquisa ?<><h2 className="container-titulo-titulo-pesquisa">{tituloPesquisa}</h2>
+          > Título pesquisa:{tituloPesquisa ?<><div className="container-titulo-titulo-pesquisa">{tituloPesquisa}
                 <button
                     onClick={() => removeFlagTituloResumo()}
                     className="botao-exclui-flag"
                   >
                     x
-                  </button></>:<></>}
+                  </button></div></>:<></>}
           
           </div>
           <h2 className="titulo-flag-resumo">
