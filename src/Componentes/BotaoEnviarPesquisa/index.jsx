@@ -62,22 +62,22 @@ export default function BotaoEnviarPesquisa() {
       if (estadosFinais[chave] === "" || estadosFinais[chave].length === 0) {
         if([chave] == "titulo" ){
           setNotificacaoErro(`O campo título é obrigatório!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }if([chave] == "lojas"){
           setNotificacaoErro(`O campo lojas é obrigatório!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }if([chave] == "inicio"){
           setNotificacaoErro(`A data inicio é obrigatória!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }if([chave] == "final"){
           setNotificacaoErro(`A data final  é obrigatória!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }if([chave] == "categoria"){
           setNotificacaoErro(`O campo categoria é obrigatório!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }if([chave] == "produtos"){
           setNotificacaoErro(`O campo produtos é obrigatório!`)
-          setTimeout(()=>setNotificacaoErro(""),1500)
+          setTimeout(()=>setNotificacaoErro(""),1800)
         }
         return;
       }
@@ -125,13 +125,12 @@ export default function BotaoEnviarPesquisa() {
       {pesquisaEnviada ? (
        <>
        <span className="notificacao-erro">{notificacaoErro}</span>
-       <button
+       {isLoading ? <div className="load"></div> : <button
           className="botao-enviar-pesquisa"
           onClick={() => validaCampos()}
           disabled={isLoading}
-        >
-          {isLoading ? "Enviando..." : "Enviar"}
-        </button>
+        >Enviar
+        </button> }
         </>
       ) : (
         <button className="botao-enviar-pesquisa-enviada">

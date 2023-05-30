@@ -23,18 +23,34 @@
     border-radius: 10px;
     border: none;
     box-shadow: none;
-    color: #3bd100;
+    color: #27BA49;
     display: flex;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     height: 4rem;
     justify-content: center;
     margin: 1rem 0rem;
     text-align: center;
-    width: 40%;
+    width: 60%;
 }
 
+.load{
+    animation: is-rotating 1s infinite;
+    align-self: center;
+    border: 6px solid #808080;
+    border-radius: 50%;
+    border-top-color:#0080FD;
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+}
+
+@keyframes is-rotating{
+    to{
+        transform: rotate(1turn);
+    }
+}
 .check-icon{
     background-color: transparent;
     font-weight: bold;
@@ -46,5 +62,8 @@
 }
 
 .notificacao-erro{
-    color:red;
+    color:#FF0000;
+    font-family: var(--fonte-Textos);
+    font-size: 1.5rem;
+    font-weight: bold;
 }
