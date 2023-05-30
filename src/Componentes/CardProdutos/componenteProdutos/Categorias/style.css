@@ -25,23 +25,23 @@
 
 .produtos {
     align-items: center;
-    height: 23rem;
+    height: 27rem;
     overflow-y: auto;
     font-family: var(--fonte-Textos); 
 }
 
 .corp {
     line-height: 1.2rem;
-    padding: 1rem;
-    font-size: .9rem;
-     margin:0.8rem 1.5rem 0.4rem 1.3rem;
+    padding: 1.2rem;
+    font-size: .8rem;
+    margin: 1rem;
     align-items: center;
     display: flex;
     background-color: rgba(217, 217, 217, 0.2);
     justify-content:space-between;
     width: auto;
     height: 3.3rem;
-    border-radius: 1rem;
+    border-radius: .7rem;
     box-shadow: 0px 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
    
 } 
