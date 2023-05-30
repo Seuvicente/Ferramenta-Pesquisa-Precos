@@ -123,7 +123,7 @@ export default function BotaoEnviarPesquisa() {
   return (
     <>
       {pesquisaEnviada ? (
-       <>
+       <div className="footer-resumo">
        <span className="notificacao-erro">{notificacaoErro}</span>
        {isLoading ? <div className="load"></div> : <button
           className="botao-enviar-pesquisa"
@@ -131,7 +131,7 @@ export default function BotaoEnviarPesquisa() {
           disabled={isLoading}
         >Enviar
         </button> }
-        </>
+        </div>
       ) : (
         <button className="botao-enviar-pesquisa-enviada">
         Pesquisa enviada <FcCheckmark className="check-icon"/>
