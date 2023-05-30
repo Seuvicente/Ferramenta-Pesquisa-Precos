@@ -26,7 +26,7 @@ export default function BotaoEnviarPesquisa() {
   const [pesquisaEnviada, setPesquisaEnviada] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [notificacaoErro,setNotificacaoErro] = useState("")
-  const [mostrarErro, setMostrarErro] = useState(false);
+  
 
   const estadosFinais = {
     titulo: tituloPesquisa,

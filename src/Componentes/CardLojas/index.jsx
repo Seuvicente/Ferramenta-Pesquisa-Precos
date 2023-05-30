@@ -66,6 +66,9 @@ export default function CardLojas() {
     );
     setLojasFiltradasOrganizadas(lojasFiltradasOrganizadas);
   };
+  const buscaLimpa = ()=>{
+    setLojasFiltradasOrganizadas(lojas)
+  }
 
   const handleCheckboxClick = (loja) => {
     if (listaLojas.includes(loja.nomeFilial)) {
@@ -95,15 +98,15 @@ export default function CardLojas() {
         </div>
         <div className="container-menu-caixa">
           <div className="container-lista">
-            <ul className="lista-menu">
+            <ul className="lista-menu"><button onClick={()=>buscaLimpa()} className="buttonMode">*</button>
               {array.map((x) => (
-                <button
+                <><button
                   key={x}
                   className="buttonLetras"
                   onClick={() => mostraMenuAaz(x)}
                 >
                   {x}
-                </button>
+                </button></>
               ))}
             </ul>
           </div>
