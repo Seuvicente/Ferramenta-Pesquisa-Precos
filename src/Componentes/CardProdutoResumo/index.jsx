@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import './CardProdutoResumo.css'
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import {ResumoContexto}  from "../../Contexto/Contexto.jsx";
 
 export default function CardProdutosResumo(){
@@ -13,6 +13,18 @@ export default function CardProdutosResumo(){
       
       } = useContext(ResumoContexto);
 
+      const scrollViewRef = useRef(null);
+  
+      const scroll = () => {
+        if (scrollViewRef.current) {
+          scrollViewRef.current.scrollTop = scrollViewRef.current.scrollHeight;
+        }
+      };
+    
+      useEffect(() => {
+        scroll();
+      }, [produtosSelecionadosArray, produtosSelecionados]);
+
     const removeFlag = (e)=>{
         setProdutosSelecionadosArray(produtosSelecionadosArray.filter((x)=> x.id != e))
         setProdutosSelecionados(produtosSelecionados.filter((x)=> x != e))
@@ -22,7 +34,7 @@ export default function CardProdutosResumo(){
         
     return(
        
-        <div  className="cardProdutoResumo">
+        <div  className="cardProdutoResumo" ref={scrollViewRef}>
             {produtosSelecionadosArray ? produtosSelecionadosArray.map((produto)=>( 
                 <div className='card-flag-resumo' key={produto.id}>
                     <span title={produto.nome}  className='item-produto'>{produto.nome}</span>
